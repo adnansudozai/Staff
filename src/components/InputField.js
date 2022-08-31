@@ -1,0 +1,57 @@
+import { StyleSheet, Image, View ,TextInput, TouchableOpacity} from 'react-native'
+import React from 'react'
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
+import { Colors } from './index';
+import Icon from 'react-native-vector-icons/AntDesign';
+
+
+const InputField = (props) => {
+  return (
+
+        <View style={styles.inputview}>
+        <TextInput
+                autoCapitalize='none'
+                placeholder={props.placeholder}
+                value={props.value}
+                maxLength={props.maxLength}
+              onChangeText={props.onChangeText}
+                textAlign={props?.textAlign}
+                borderColor={props.borderColor}
+            
+                placeholderTextColor={props.placeholderTextColor ? props.placeholderTextColor : "#94959B"}
+                secureTextEntry={props.secureTextEntry?props.secureTextEntry:false}
+                style={{height:props.height?props.height:hp(6.2),width:props.righticon?wp(72):props.width?props.width:wp(80),paddingLeft:8,color:Colors.borderColor,fontSize:15,fontWeight:'500',backgroundColor:props.backgroundColor?props.backgroundColor:''}}
+            />
+    {props.righticon &&
+    <TouchableOpacity onPress={props.onrighticonpress}>
+                {/* <Image source={props.righticon} style={{width: wp(7), height: wp(7)}} resizeMode={"contain"}></Image> */}
+                <Icon
+                          name={props.righticon}
+                          size={18}
+                        
+                        />
+                </TouchableOpacity>
+            }
+        </View>
+      
+  
+  )
+}
+
+export default InputField
+
+const styles = StyleSheet.create({
+    inputview:{borderWidth:1,
+
+flexDirection:'row',
+justifyContent:'space-between',
+borderRadius:5,
+borderColor:Colors.borderColor,
+alignItems:'center',
+
+
+}
+})
