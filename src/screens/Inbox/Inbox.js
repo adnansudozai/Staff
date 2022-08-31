@@ -177,7 +177,7 @@ const renderItem = ({ item }) => {
   )
 }
   return (
-    <Container backgroundColor={Colors.statusbarcolor}>
+    <Container backgroundColor={Colors.textColorWhite}>
      <Header
      name={'Elaine Hale'}
     //  onPress={()=>props.navigation.openDrawer()}

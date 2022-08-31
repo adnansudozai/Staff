@@ -108,24 +108,24 @@ const Schedule = (props) => {
           </ResponsiveText>
         </View>
 
-        <View style={styles.datevie}>
+        <View style={{...styles.datevie,width:wp(9)}}>
           <ResponsiveText style={styles.headingtxt}>
             {'Time'}
           </ResponsiveText>
         </View>
-        <View style={styles.datevie}>
+        <View style={{...styles.datevie,width:wp(13)}}>
           <ResponsiveText style={styles.headingtxt}>
             {'Patient'}
           </ResponsiveText>
         </View>
 
-        <View style={{ ...styles.datevie, width: wp(30) }}>
+        <View style={{ ...styles.datevie, width: wp(10) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Age'}
           </ResponsiveText>
         </View>
 
-        <View style={{ ...styles.datevie, width: wp(30) }}>
+        <View style={{ ...styles.datevie, width: wp(12) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Sex'}
           </ResponsiveText>
@@ -133,55 +133,55 @@ const Schedule = (props) => {
 
 
 
-        <View style={{ ...styles.datevie, width: wp(45) }}>
+        <View style={{ ...styles.datevie, width: wp(16) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'DOB'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(16) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Location'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(16) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Provider'}
           </ResponsiveText>
         </View>
 
-        <View style={{ ...styles.datevie, width: wp(54) }}>
+        <View style={{ ...styles.datevie, width: wp(24) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Visit Type'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(64) }}>
+        <View style={{ ...styles.datevie, width: wp(30) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Primary/Secondary'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(50) }}>
+        <View style={{ ...styles.datevie, width: wp(26) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Scheduling Status'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(54) }}>
+        <View style={{ ...styles.datevie, width: wp(19) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Status Time'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(34) }}>
+        <View style={{ ...styles.datevie, width: wp(11) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Room'}
           </ResponsiveText>
@@ -189,28 +189,28 @@ const Schedule = (props) => {
 
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(14) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Api Veri'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(12) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Copay'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(14) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Balance'}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(10) }}>
           <ResponsiveText style={styles.headingtxt}>
             {'Sign'}
           </ResponsiveText>
@@ -244,24 +244,24 @@ const Schedule = (props) => {
           </ResponsiveText>
         </View>
 
-        <View style={styles.datevie}>
+        <View style={{...styles.datevie,width:wp(9)}}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.time}
           </ResponsiveText>
         </View>
-        <View style={styles.datevie}>
+        <View style={{...styles.datevie,width:wp(13)}}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.name}
           </ResponsiveText>
         </View>
 
-        <View style={{ ...styles.datevie, width: wp(30) }}>
+        <View style={{ ...styles.datevie, width: wp(10) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.age}
           </ResponsiveText>
         </View>
 
-        <View style={{ ...styles.datevie, width: wp(30) }}>
+        <View style={{ ...styles.datevie, width: wp(12) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.sex}
           </ResponsiveText>
@@ -269,46 +269,48 @@ const Schedule = (props) => {
 
 
 
-        <View style={{ ...styles.datevie, width: wp(45) }}>
+        <View style={{ ...styles.datevie, width: wp(16) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.Dob}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(16) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.Location}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(16) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.Provider}
           </ResponsiveText>
         </View>
 
-        <View style={{ ...styles.datevie, width: wp(54) }}>
+        <View style={{ ...styles.datevie, width: wp(24) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.Visittype}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(64) }}>
+        <View style={{ ...styles.datevie, width: wp(30) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.primery}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(50) }}>
+        <View style={{ ...styles.datevie, width: wp(26) }}>
           <Dropdown
             data={Status}
             borderColor={Colors.borderColor}
-            width={wp(30)}
-            height={hp(3.5)}
+            width={wp(23)}
+            height={hp(2.2)}
+            size={10}
+            fontSize={12}
             backgroundColor={'white'}
             defaultButtonText={'Conferm'}
             textcolor={Colors.grayText}
@@ -319,14 +321,14 @@ const Schedule = (props) => {
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(54) }}>
+        <View style={{ ...styles.datevie, width: wp(19) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.statustime}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(34) }}>
+        <View style={{ ...styles.datevie, width: wp(11) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.Room}
           </ResponsiveText>
@@ -334,12 +336,15 @@ const Schedule = (props) => {
 
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(14) }}>
           <Dropdown
             data={apiveri}
             borderColor={Colors.borderColor}
-            width={wp(20)}
-            height={hp(4)}
+            width={wp(12)}
+            height={hp(2)}
+            size={10}
+            fontSize={8}
+            style={{borderRadius:1}}
             backgroundColor={'white'}
             defaultButtonText={'No'}
             textcolor={Colors.grayText}
@@ -350,26 +355,26 @@ const Schedule = (props) => {
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(12) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {''}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(14) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {''}
           </ResponsiveText>
         </View>
 
 
-        <View style={{ ...styles.datevie, width: wp(44) }}>
+        <View style={{ ...styles.datevie, width: wp(10) }}>
           <ResponsiveText style={styles.headingtxt1}>
             {''}
           </ResponsiveText>
         </View>
-        <View style={{ ...styles.actionview, borderRightWidth: 0 }}>
+        <View style={{ ...styles.actionview,}}>
           <TouchableOpacity onPress={() => props.navigation.navigate('EditAppointment')}>
             <Icon
               name="edit"
@@ -394,7 +399,7 @@ const Schedule = (props) => {
     )
   }
   return (
-    <Container backgroundColor={Colors.statusbarcolor}>
+    <Container backgroundColor={Colors.textColorWhite}>
       <Header
         name={'Elaine Hale'}
       //  onPress={()=>props.navigation.openDrawer()}
@@ -407,6 +412,9 @@ const Schedule = (props) => {
         <View style={styles.modalview}>
           <View style={styles.modalhalf}>
             <ScrollView showsVerticalScrollIndicator={false}>
+
+
+
               <View style={styles.filtecross}>
                 <ResponsiveText style={styles.inboxtxt}>
                   {'Filters'}
@@ -545,6 +553,9 @@ const Schedule = (props) => {
                   </ResponsiveText>
                 </TouchableOpacity>
               </View>
+
+
+
             </ScrollView>
           </View>
         </View>
@@ -670,31 +681,31 @@ const styles = StyleSheet.create({
   filtecross: {
     borderWidth: 0, alignItems: 'center', flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: hp(6), marginHorizontal: wp(3),
+    marginTop: hp(3), marginHorizontal: wp(3),
     borderBottomWidth: 1, borderColor: Colors.borderColor, paddingBottom: 10
   },
   datevie: {
     borderRightWidth: 1,
-    paddingVertical: 25,
-    width: wp(23),
+    paddingVertical: 5,
+    width: wp(17),
     alignItems: 'center',
     borderColor: Colors.borderColor
   },
 
   datevie1: {
-    borderRightWidth: 1,
-    paddingVertical: 15,
+    borderWidth: 1,
+    paddingVertical: 3,
     width: wp(23),
     alignItems: 'center',
     borderColor: Colors.borderColor,
     justifyContent: 'center'
   },
   actionview: {
-    paddingVertical: 15,
-    width: wp(23),
+    paddingVertical: 3,
+    width: wp(20),
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent:'space-evenly'
 
   },
   headingtxt: {
@@ -721,17 +732,17 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     backgroundColor: Colors.primary,
     marginHorizontal: wp(3), marginTop: hp(3),
-    borderTopRightRadius: 7,
-    borderTopLeftRadius: 7,
+
     flexDirection: 'row',
-    justifyContent: 'space-between'
+
   }
   ,
   headinsg1: {
-    borderWidth: 0,
+  borderWidth:1,
+  borderColor:Colors.borderColor,
     marginHorizontal: wp(3),
     flexDirection: 'row',
-    justifyContent: 'space-between'
+
   },
   // icons:{width:wp(8),height:wp(8)},
 

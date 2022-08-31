@@ -16,19 +16,20 @@ const [focus,setfocus]=useState(false)
     <SelectDropdown
 	data={props.data}
 	onSelect={props.onSelect}
-    buttonStyle={{...styles.dropdownStyle,backgroundColor:props.backgroundColor,borderRadius:focus?0:8,width:props.width,borderColor:props.borderColor,height:props.height?props.height:hp(6.5)}}
+    buttonStyle={{...props.style,...styles.dropdownStyle,backgroundColor:props.backgroundColor,borderRadius:focus?0:5,width:props.width,borderColor:props.borderColor,height:props.height?props.height:hp(6.5)}}
    renderDropdownIcon={
     ()=>{return(
         <Icon
         name={focus?"up":"down"}
-        size={17}
+        size={props.size?props.size:17}
         color={'black'}
       />
     )}
    }
+  
      
     defaultButtonText={props.defaultButtonText}
-    buttonTextStyle={{color:props.textcolor,borderWidth:0,position:'absolute',right:5}}
+    buttonTextStyle={{color:props.textcolor,borderWidth:0,position:'absolute',right:5,fontSize: props.fontSize?props.fontSize:12,}}
     onFocus={()=>setfocus(!focus)}
     onBlur={()=>setfocus(!focus)}
     

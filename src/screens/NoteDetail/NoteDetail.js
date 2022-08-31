@@ -106,37 +106,37 @@ const NoteDetail = props => {
    {'BP (sys/dia)'}
  </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(22)}}>
+<View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'HR'}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(22)}}>
+ <View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'RR'}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie}}>
+ <View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Temp'}
  </ResponsiveText>
  </View>
 
 
- <View style={{...styles.datevie}}>
+ <View style={{...styles.datevie,width:wp(20)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Weight (lbs)'}
  </ResponsiveText>
  </View>
- <View style={{...styles.datevie,width:wp(35)}}>
+ <View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Height (in)'}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(45),borderRightWidth:0}}>
+ <View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'BMI'}
  </ResponsiveText>
@@ -163,19 +163,19 @@ const NoteDetail = props => {
    {'Provider'}
  </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(43)}}>
+<View style={{...styles.datevie,width:wp(25)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Location'}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(55)}}>
+ <View style={{...styles.datevie,width:wp(40)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Visit Type'}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(53),borderRightWidth:0}}>
+ <View style={{...styles.datevie,}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Status'}
  </ResponsiveText>
@@ -376,7 +376,7 @@ const NoteDetail = props => {
   const renderConceltent=({item,index})=>{
     return(
       <View style={{...styles.headinsgvitals, backgroundColor:index%2!=0?  'white':'#EFF6FA'}}> 
-      <View style={{...styles.datevie,width:wp(53)}}>
+      <View style={{...styles.datevie,width:wp(30)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.date}
  </ResponsiveText>
@@ -386,19 +386,19 @@ const NoteDetail = props => {
    {item.Provider}
  </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(43)}}>
+<View style={{...styles.datevie,width:wp(25)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.Location}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(55)}}>
+ <View style={{...styles.datevie,width:wp(40)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.VisitType}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(53),borderRightWidth:0}}>
+ <View style={{...styles.datevie,}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.Status}
  </ResponsiveText>
@@ -408,7 +408,22 @@ const NoteDetail = props => {
   }
   let data=[
     {
-     id:1
+     id:1,
+     date:'No Data',
+     bp:'No Data',
+     hr:'No Data',
+     rr:'No Data',
+     temp:'No Data',
+     weight:'No Data',
+     height:'No Data',
+     bmi:'No Data',
+
+
+
+
+
+
+
     },
     {
       id:2
@@ -421,47 +436,47 @@ const NoteDetail = props => {
       <View style={{...styles.headinsgvitals,  backgroundColor:index%2!=0?  'white':'#EFF6FA'}}> 
       <View style={styles.datevie}>
 <ResponsiveText style={styles.headingtxt1}>
-   {''}
+   {item.date}
  </ResponsiveText>
 </View>
 <View style={styles.datevie}>
 <ResponsiveText style={styles.headingtxt1}>
-   {''}
+   {item.bp}
  </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(22)}}>
+<View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt1}>
-   {''}
+   {item.hr}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(22)}}>
+ <View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt1}>
-   {''}
+   {item.rr}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie}}>
+ <View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt1}>
-   {''}
+   {item.temp}
  </ResponsiveText>
  </View>
 
 
- <View style={{...styles.datevie}}>
+ <View style={{...styles.datevie,width:wp(20)}}>
 <ResponsiveText style={styles.headingtxt1}>
-   {''}
+   {item.weight}
  </ResponsiveText>
  </View>
- <View style={{...styles.datevie,width:wp(35)}}>
+ <View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt1}>
-   {''}
+   {item.height}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(45),borderRightWidth:0}}>
+ <View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt1}>
-   {''}
+   {item.bmi}
  </ResponsiveText>
  </View>
  {/* <View style={{...styles.datevie}}>
@@ -532,7 +547,7 @@ style={{width:wp(5),height:wp(5)}}/>
         <ScrollView
           nestedScrollEnabled={true}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{paddingBottom: hp(10)}}>
+          contentContainerStyle={{paddingBottom: hp(60),marginBottom:hp(50)}}>
 
 
           <View style={{...styles.textheading,marginTop:hp(2)}}>
@@ -8747,10 +8762,10 @@ const styles = StyleSheet.create({
     borderTopRightRadius:0,
     borderTopLeftRadius:0,
     flexDirection:'row',
-    justifyContent:'space-between'
+
   },
   headinsgvitals:{
-    borderWidth:1,
+    borderWidth:0,
   
     flexDirection:'row',
     justifyContent:'space-between',
@@ -8759,16 +8774,16 @@ const styles = StyleSheet.create({
   },
   datevie:{
     borderWidth:1,
-    paddingVertical:10,
-    width:wp(25),
+    paddingVertical:2,
+    width:wp(18),
     alignItems:'center',
     borderColor:Colors.borderColor
   },
   headingtxt:{
-    fontSize:14,fontWeight:'500',color:'white'
+    fontSize:14,fontWeight:'700',color:'white'
   },
   headingtxt1:{
-    fontSize:14,fontWeight:'700',color:'black'
+    fontSize:14,fontWeight:'400',color:'black'
   },
   /////table end
 });

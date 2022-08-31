@@ -59,8 +59,8 @@ const Pendingnotes = (props) => {
         return(
 
 
-<View style={{...styles.headinsg1,backgroundColor:index%2!=0?  'white':'#EFF6FA'}}> 
-<TouchableOpacity style={{...styles.datevie,width:wp(20)}} onPress={()=>props.navigation.navigate('NoteDetail')}>
+<TouchableOpacity style={{...styles.headinsg1,backgroundColor:index%2!=0?  'white':'#EFF6FA'}} onPress={()=>props.navigation.navigate('NoteDetail')}> 
+<TouchableOpacity style={{...styles.datevie,width:wp(8)}} >
          <Icon
                          name="check-box-outline-blank"
                          //check-box
@@ -75,30 +75,30 @@ const Pendingnotes = (props) => {
       {item.date}
     </ResponsiveText>
 </View>
-<View style={styles.datevie}>
+<View style={{...styles.datevie,width:wp(10)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.time}
     </ResponsiveText>
 </View>
-<View style={{...styles.datevie,}}>
+<View style={{...styles.datevie,width:wp(15)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Patient}
     </ResponsiveText>
 </View>
 
-<View style={{...styles.datevie,width:wp(45),borderRightWidth:0}}>
+<View style={{...styles.datevie,width:wp(23)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Location}
     </ResponsiveText>
 </View>
            
-</View>
+</TouchableOpacity>
         )
       }
       const ListHeaderComponent = () => {
         return (
           <View style={styles.headinsg}> 
-          <TouchableOpacity style={{...styles.datevie,width:wp(20)}}>
+          <TouchableOpacity style={{...styles.datevie,width:wp(8)}}>
                    <Icon
                                    name="check-box-outline-blank"
                                    //check-box
@@ -113,18 +113,18 @@ const Pendingnotes = (props) => {
                 {'Date'}
               </ResponsiveText>
           </View>
-          <View style={styles.datevie}>
+          <View style={{...styles.datevie,width:wp(10)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Time'}
               </ResponsiveText>
           </View>
-          <View style={{...styles.datevie,}}>
+          <View style={{...styles.datevie,width:wp(15)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Patient'}
               </ResponsiveText>
           </View>
 
-          <View style={{...styles.datevie,width:wp(45),borderWidth:1}}>
+          <View style={{...styles.datevie,width:wp(23)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Location'}
               </ResponsiveText>
@@ -154,7 +154,8 @@ const Pendingnotes = (props) => {
               </ResponsiveText>
           </View>
   
- <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+ <ScrollView>
+  <View  style={{borderWidth:0,alignSelf:'center',justifyContent:'center',alignItems:'center'}}>
  <FlatList
                showsVerticalScrollIndicator={false}
                scrollEnabled={false}
@@ -167,6 +168,7 @@ const Pendingnotes = (props) => {
                renderItem={renderItem}
                keyExtractor={(item, index) => index.toString()}
              />
+             </View>
  </ScrollView>
  </ScrollView>
    </Container>
@@ -194,14 +196,12 @@ const styles = StyleSheet.create({
         color:Colors.balckText
       },
       mainheadingview:{
-        borderWidth:0,marginTop:hp(3),marginHorizontal:wp(3)
+        borderWidth:0,marginTop:hp(3),marginHorizontal:wp(12)
       },
       footerstyle:{
 
         marginHorizontal:wp(3),
         borderBottomWidth:0,
-        borderBottomLeftRadius:10,
-        borderBottomRightRadius:10,
         borderColor:Colors.borderColor,
         marginTop:0.2,
         shadowColor: "#000",
@@ -243,15 +243,13 @@ const styles = StyleSheet.create({
         borderWidth:0,
         backgroundColor:Colors.primary,
         marginHorizontal:wp(3),marginTop:hp(3),
-        borderTopRightRadius:7,
-        borderTopLeftRadius:7,
         flexDirection:'row',
-        justifyContent:'space-between'
+       
       },
       datevie:{
-        borderRightWidth:1,
-        paddingVertical:25,
-        width:wp(35),
+        borderWidth:1,
+        paddingVertical:5,
+        width:wp(18),
         alignItems:'center',
         borderColor:Colors.borderColor
       },

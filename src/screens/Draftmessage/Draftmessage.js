@@ -47,7 +47,7 @@ const Draftmessage = (props) => {
     </ResponsiveText>
 </View>
 
-<View style={{...styles.datevie,width:wp(55),flexDirection:'row',borderWidth:0,justifyContent:'space-around',alignItems:"center",paddingHorizontal:wp(9)}}>
+<View style={{...styles.datevie,width:wp(30),flexDirection:'row',borderWidth:0,justifyContent:'space-around',alignItems:"center"}}>
 
 <TouchableOpacity>
 
@@ -98,7 +98,7 @@ const Draftmessage = (props) => {
                 {'Date/Time'}
               </ResponsiveText>
           </View>
-          <View style={{...styles.datevie,width:wp(55)}}>
+          <View style={{...styles.datevie,width:wp(30)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Action'}
               </ResponsiveText>
@@ -218,15 +218,13 @@ const styles = StyleSheet.create({
         borderWidth:0,
         backgroundColor:Colors.primary,
         marginHorizontal:wp(3),marginTop:hp(3),
-        borderTopRightRadius:7,
-        borderTopLeftRadius:7,
         flexDirection:'row',
-        justifyContent:'space-between'
+     
       },
       datevie:{
         borderRightWidth:1,
-        paddingVertical:25,
-        width:wp(35),
+        paddingVertical:3,
+        width:wp(20),
         alignItems:'center',
         borderColor:Colors.borderColor
       },

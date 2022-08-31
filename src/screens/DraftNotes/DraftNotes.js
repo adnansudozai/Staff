@@ -63,7 +63,7 @@ const DraftNotes = (props) => {
       {item.date}
     </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(55),borderWidth:0}}>
+<View style={{...styles.datevie,width:wp(30)}}>
           <ResponsiveText style={styles.headingtxt1}>
                 {item.Title}
               </ResponsiveText>
@@ -79,7 +79,7 @@ const DraftNotes = (props) => {
     </ResponsiveText>
 </View>
 
-<View style={{...styles.datevie,width:wp(45),borderRightWidth:0}}>
+<View style={{...styles.datevie,width:wp(23)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Location}
     </ResponsiveText>
@@ -99,7 +99,7 @@ const DraftNotes = (props) => {
               </ResponsiveText>
           </View>
 
-          <View style={{...styles.datevie,width:wp(55),borderWidth:0}}>
+          <View style={{...styles.datevie,width:wp(30)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Title'}
               </ResponsiveText>
@@ -115,7 +115,7 @@ const DraftNotes = (props) => {
               </ResponsiveText>
           </View>
 
-          <View style={{...styles.datevie,width:wp(45),borderWidth:0}}>
+          <View style={{...styles.datevie,width:wp(23)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Location'}
               </ResponsiveText>
@@ -219,16 +219,15 @@ const styles = StyleSheet.create({
      borderWidth:0,
      backgroundColor:Colors.primary,
      marginHorizontal:wp(3),marginTop:hp(3),
-     borderTopRightRadius:7,
-     borderTopLeftRadius:7,
+   
      flexDirection:'row',
      alignItems:'center',
-     justifyContent:'space-between'
+   
    },
    datevie:{
-     borderRightWidth:1,
-     paddingVertical:25,
-     width:wp(35),
+     borderWidth:1,
+     paddingVertical:3,
+     width:wp(16),
      alignItems:'center',
      borderColor:Colors.borderColor
    },
