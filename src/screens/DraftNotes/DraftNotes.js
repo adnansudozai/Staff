@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
    datevie:{
      borderWidth:1,
      paddingVertical:3,
-     width:wp(16),
+     width:wp(19),
      alignItems:'center',
      borderColor:Colors.borderColor
    },

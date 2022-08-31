@@ -108,7 +108,7 @@ const Schedule = (props) => {
           </ResponsiveText>
         </View>
 
-        <View style={{...styles.datevie,width:wp(9)}}>
+        <View style={{...styles.datevie,width:wp(11)}}>
           <ResponsiveText style={styles.headingtxt}>
             {'Time'}
           </ResponsiveText>
@@ -244,7 +244,7 @@ const Schedule = (props) => {
           </ResponsiveText>
         </View>
 
-        <View style={{...styles.datevie,width:wp(9)}}>
+        <View style={{...styles.datevie,width:wp(11)}}>
           <ResponsiveText style={styles.headingtxt1}>
             {item.time}
           </ResponsiveText>

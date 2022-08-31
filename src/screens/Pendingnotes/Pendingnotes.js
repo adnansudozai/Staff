@@ -75,7 +75,7 @@ const Pendingnotes = (props) => {
       {item.date}
     </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(10)}}>
+<View style={{...styles.datevie,width:wp(12)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.time}
     </ResponsiveText>
@@ -113,7 +113,7 @@ const Pendingnotes = (props) => {
                 {'Date'}
               </ResponsiveText>
           </View>
-          <View style={{...styles.datevie,width:wp(10)}}>
+          <View style={{...styles.datevie,width:wp(12)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Time'}
               </ResponsiveText>
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
       datevie:{
         borderWidth:1,
         paddingVertical:5,
-        width:wp(18),
+        width:wp(20),
         alignItems:'center',
         borderColor:Colors.borderColor
       },
