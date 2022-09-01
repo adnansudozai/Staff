@@ -96,12 +96,12 @@ const NoteDetail = props => {
   const ListHeaderComponent = () => {
     return (
       <View style={styles.headinsg}> 
-      <View style={styles.datevie}>
+      <View style={{...styles.datevie,width:wp(24)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Date'}
  </ResponsiveText>
 </View>
-<View style={styles.datevie}>
+<View style={{...styles.datevie,width:wp(24)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'BP (sys/dia)'}
  </ResponsiveText>
@@ -125,12 +125,12 @@ const NoteDetail = props => {
  </View>
 
 
- <View style={{...styles.datevie,width:wp(20)}}>
+ <View style={{...styles.datevie,width:wp(22)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Weight (lbs)'}
  </ResponsiveText>
  </View>
- <View style={{...styles.datevie,width:wp(15)}}>
+ <View style={{...styles.datevie,width:wp(20)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Height (in)'}
  </ResponsiveText>
@@ -153,23 +153,23 @@ const NoteDetail = props => {
   const ConceltentHeader = () => {
     return (
       <View style={styles.headinsg}> 
-      <View style={{...styles.datevie,width:wp(30)}}>
+      <View style={{...styles.datevie,width:wp(40)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Date/Time of Consult'}
  </ResponsiveText>
 </View>
-<View style={styles.datevie}>
+<View style={{...styles.datevie,width:wp(26)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Provider'}
  </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(25)}}>
+<View style={{...styles.datevie,width:wp(35)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Location'}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(40)}}>
+ <View style={{...styles.datevie,width:wp(54)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Visit Type'}
  </ResponsiveText>
@@ -351,21 +351,22 @@ const NoteDetail = props => {
   };
   let conceltent=[
     {
-      date:'05/08/2022',
+      date:'05/08/2022:12:55:PM',
       Provider:'Doc PSY,MD',
       Location:'Willowbrook Clinic',
       VisitType:'New Pt, Outpatient Office Visit',
       Status:'Scheduled'
     },
     {
-      date:'05/08/2022',
+      date:'05/08/2022:12:55:PM',
+
       Provider:'Doc PSY,MD',
       Location:'Willowbrook Clinic',
       VisitType:'New Pt, Outpatient Office Visit',
       Status:'Scheduled'
     },
     {
-      date:'05/08/2022',
+      date:'05/08/2022:12:55:PM',
       Provider:'Doc PSY,MD',
       Location:'Willowbrook Clinic',
       VisitType:'New Pt, Outpatient Office Visit',
@@ -376,23 +377,23 @@ const NoteDetail = props => {
   const renderConceltent=({item,index})=>{
     return(
       <View style={{...styles.headinsgvitals, backgroundColor:index%2!=0?  'white':'#EFF6FA'}}> 
-      <View style={{...styles.datevie,width:wp(30)}}>
+      <View style={{...styles.datevie,width:wp(40)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.date}
  </ResponsiveText>
 </View>
-<View style={styles.datevie}>
+<View style={{...styles.datevie,width:wp(26)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.Provider}
  </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(25)}}>
+<View style={{...styles.datevie,width:wp(35)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.Location}
  </ResponsiveText>
  </View>
 
- <View style={{...styles.datevie,width:wp(40)}}>
+ <View style={{...styles.datevie,width:wp(54)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.VisitType}
  </ResponsiveText>
@@ -434,12 +435,12 @@ const NoteDetail = props => {
   const renderVitals=({item,index})=>{
     return(
       <View style={{...styles.headinsgvitals,  backgroundColor:index%2!=0?  'white':'#EFF6FA'}}> 
-      <View style={styles.datevie}>
+      <View style={{...styles.datevie,width:wp(24)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.date}
  </ResponsiveText>
 </View>
-<View style={styles.datevie}>
+<View style={{...styles.datevie,width:wp(24)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.bp}
  </ResponsiveText>
@@ -463,12 +464,12 @@ const NoteDetail = props => {
  </View>
 
 
- <View style={{...styles.datevie,width:wp(20)}}>
+ <View style={{...styles.datevie,width:wp(22)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.weight}
  </ResponsiveText>
  </View>
- <View style={{...styles.datevie,width:wp(15)}}>
+ <View style={{...styles.datevie,width:wp(20)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.height}
  </ResponsiveText>
@@ -547,7 +548,7 @@ style={{width:wp(5),height:wp(5)}}/>
         <ScrollView
           nestedScrollEnabled={true}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{paddingBottom: hp(60),marginBottom:hp(50)}}>
+          contentContainerStyle={{paddingBottom: hp(6),marginBottom:hp(5)}}>
 
 
           <View style={{...styles.textheading,marginTop:hp(2)}}>
@@ -8645,9 +8646,8 @@ const styles = StyleSheet.create({
   renderview: {
     flexDirection: 'row',
     // alignItems: 'center',
-
-   
     borderWidth:0,
+    marginLeft:3,
     marginTop: 10,
   },
   checkbox:{
@@ -8690,7 +8690,7 @@ const styles = StyleSheet.create({
     color: Colors.balckText,
   },
   text1: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '400',
     color: Colors.balckText,
     borderWidth: 0,
@@ -8756,26 +8756,27 @@ const styles = StyleSheet.create({
   },
   datetxt:{fontSize:16,color:Colors.balckText,fontWeight:'600'},
   headinsg:{
-    borderWidth:0,
+    borderWidth:1,
+    borderBottomWidth:0,
     backgroundColor:Colors.primary,
     marginHorizontal:wp(3),marginTop:hp(3),
-    borderTopRightRadius:0,
-    borderTopLeftRadius:0,
+    borderRightWidth:0,
     flexDirection:'row',
+    borderColor:Colors.borderColor
 
   },
   headinsgvitals:{
     borderWidth:0,
   
     flexDirection:'row',
-    justifyContent:'space-between',
+   
     marginHorizontal:wp(3),
     borderColor:Colors.borderColor
   },
   datevie:{
     borderWidth:1,
     paddingVertical:2,
-    width:wp(18),
+    width:wp(22),
     alignItems:'center',
     borderColor:Colors.borderColor
   },

@@ -12,6 +12,8 @@ import { color } from 'react-native-reanimated';
 
 const Message = (props) => {
 
+ 
+
   return (
     <Container backgroundColor={Colors.textColorWhite}>
         <Simpleheader
@@ -72,7 +74,7 @@ const Message = (props) => {
         value={`Your appointment booked successfully. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`}
         onChangeText={(text)=>console.log(text)}
         placeholderTextColor={Colors.txtgray}
-        height={hp(15)}
+        height={hp(25)}
         editabl={false}
         style={{paddingVertical:30,textAlignVertical:'center'}}
         />

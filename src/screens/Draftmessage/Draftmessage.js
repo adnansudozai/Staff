@@ -9,45 +9,74 @@ import { ScrollView } from 'react-native-virtualized-view';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
+
 const Draftmessage = (props) => {
+
+const [selectedid, setselectedid] = useState([]);
+
     let data=[
         {
+          id:1,
             message:'Message',
             datetime:'Wed 12:30 PM'
         },
         {
+          id:2,
             message:'Message',
             datetime:'Wed 12:30 PM'
         },
       
       ]
+
+      const pushmessage = id => {
+        if (selectedid.includes(id) === true) {
+          console.log('if condition true', selectedid);
+          const updatedArr = selectedid.filter(e => e !== id);
+      
+          setselectedid(updatedArr);
+        } else {
+          // newarray.push(id);
+          var array1 = [...selectedid, id];
+       
+          setselectedid(array1);
+      
+        }
+      };
       const renderItem=({item,index})=>{
         return(
 
 
 <View style={{...styles.headinsg1,backgroundColor:index%2!=0?  'white':'#EFF6FA'}}> 
-<TouchableOpacity style={{...styles.datevie,width:wp(20)}}>
-         <Icon
-                         name="check-box-outline-blank"
-                         //check-box
-                         size={18}
-                         color={Colors.primary}
-                       
-                       />
+
+<TouchableOpacity onPress={()=>pushmessage(item.id)} style={{...styles.datevie,width:wp(10)}}>
+       
+{selectedid.includes(item.id) == true ? (
+            <Icon name="check-box" size={18} color={Colors.primary}   style={styles.checkbox}
+            />
+          ) : (
+            <Icon
+              name="check-box-outline-blank"
+              //check-box
+              size={18}
+              color={Colors.primary}
+              style={styles.checkbox}
+            />
+          )}
 </TouchableOpacity>
+
 
 <View style={styles.datevie}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.message}
     </ResponsiveText>
 </View>
-<View style={styles.datevie}>
+<View style={{...styles.datevie,width:wp(27)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.datetime}
     </ResponsiveText>
 </View>
 
-<View style={{...styles.datevie,width:wp(30),flexDirection:'row',borderWidth:0,justifyContent:'space-around',alignItems:"center"}}>
+<View style={{...styles.datevie,width:wp(30),flexDirection:'row',borderWidth:1,justifyContent:'space-around',alignItems:"center"}}>
 
 <TouchableOpacity>
 
@@ -78,7 +107,7 @@ const Draftmessage = (props) => {
       const ListHeaderComponent = () => {
         return (
           <View style={styles.headinsg}> 
-          <TouchableOpacity style={{...styles.datevie,width:wp(20)}}>
+          <TouchableOpacity style={{...styles.datevie,width:wp(10)}}>
                    <Icon
                                    name="check-box-outline-blank"
                                    //check-box
@@ -93,7 +122,7 @@ const Draftmessage = (props) => {
                 {'Message'}
               </ResponsiveText>
           </View>
-          <View style={styles.datevie}>
+          <View style={{...styles.datevie,width:wp(27)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Date/Time'}
               </ResponsiveText>
@@ -154,12 +183,6 @@ const styles = StyleSheet.create({
 
      /////table start
 
-     headinsg1:{
-        borderWidth:0,
-        marginHorizontal:wp(3),
-        flexDirection:'row',
-        justifyContent:'space-between'
-      },
       headingtxt1:{
         fontSize:12,fontWeight:'700',color:Colors.balckText,
       },
@@ -201,28 +224,25 @@ const styles = StyleSheet.create({
         borderWidth:0,
       
         flexDirection:'row',
-        justifyContent:'space-between',
+      
         marginHorizontal:wp(3),
         borderColor:Colors.borderColor
       },
-      actionview:{
-        paddingVertical:15,
-        width:wp(23),
-        alignItems:'center',
-        flexDirection:'row',
-        justifyContent:'space-evenly',
-    
-      },
+ 
       datetxt:{fontSize:16,color:Colors.balckText,fontWeight:'600'},
       headinsg:{
-        borderWidth:0,
+        borderRightWidth:0,
+        borderLeftWidth:0,
         backgroundColor:Colors.primary,
         marginHorizontal:wp(3),marginTop:hp(3),
         flexDirection:'row',
+        borderColor:Colors.borderColor,
+        borderBottomWidth:0
+
      
       },
       datevie:{
-        borderRightWidth:1,
+        borderWidth:1,
         paddingVertical:3,
         width:wp(20),
         alignItems:'center',

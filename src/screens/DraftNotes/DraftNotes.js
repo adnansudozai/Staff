@@ -63,12 +63,12 @@ const DraftNotes = (props) => {
       {item.date}
     </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(30)}}>
+<View style={{...styles.datevie,width:wp(40)}}>
           <ResponsiveText style={styles.headingtxt1}>
                 {item.Title}
               </ResponsiveText>
           </View>
-<View style={styles.datevie}>
+          <View style={{...styles.datevie,width:wp(17)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.time}
     </ResponsiveText>
@@ -79,7 +79,7 @@ const DraftNotes = (props) => {
     </ResponsiveText>
 </View>
 
-<View style={{...styles.datevie,width:wp(23)}}>
+<View style={{...styles.datevie,width:wp(33)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Location}
     </ResponsiveText>
@@ -99,12 +99,13 @@ const DraftNotes = (props) => {
               </ResponsiveText>
           </View>
 
-          <View style={{...styles.datevie,width:wp(30)}}>
+          <View style={{...styles.datevie,width:wp(40)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Title'}
               </ResponsiveText>
           </View>
-          <View style={styles.datevie}>
+          <View style={{...styles.datevie,width:wp(17)}}>
+
           <ResponsiveText style={styles.headingtxt}>
                 {'Time'}
               </ResponsiveText>
@@ -115,7 +116,7 @@ const DraftNotes = (props) => {
               </ResponsiveText>
           </View>
 
-          <View style={{...styles.datevie,width:wp(23)}}>
+          <View style={{...styles.datevie,width:wp(33)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Location'}
               </ResponsiveText>
@@ -216,10 +217,10 @@ const styles = StyleSheet.create({
    },
    datetxt:{fontSize:16,color:Colors.balckText,fontWeight:'600'},
    headinsg:{
-     borderWidth:0,
+    borderColor:Colors.borderColor,
      backgroundColor:Colors.primary,
      marginHorizontal:wp(3),marginTop:hp(3),
-   
+      borderWidth:1,
      flexDirection:'row',
      alignItems:'center',
    
@@ -227,7 +228,7 @@ const styles = StyleSheet.create({
    datevie:{
      borderWidth:1,
      paddingVertical:3,
-     width:wp(19),
+     width:wp(23),
      alignItems:'center',
      borderColor:Colors.borderColor
    },

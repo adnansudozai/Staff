@@ -13,61 +13,92 @@ import { color } from 'react-native-reanimated';
 const Pendingnotes = (props) => {
     let data=[
         {
+          id:1,
           date:'05/08/2022',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic'
         },
         {
+          id:2,
           date:'05/08/2022',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic'
         },
         {
+          id:3,
           date:'05/08/2022',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic'
         },
         {
+          id:4,
           date:'05/08/2022',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic'
         },
         {
+          id:5,
           date:'05/08/2022',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic'
         },
         {
+          id:6,
           date:'05/08/2022',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic'
         },
-        {
+        {  id:7,
           date:'05/08/2022',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic'
         },
       ]
+
+      const [selectedid, setselectedid] = useState([]);
+
+   
+
+      const pushmessage = id => {
+        if (selectedid.includes(id) === true) {
+          console.log('if condition true', selectedid);
+          const updatedArr = selectedid.filter(e => e !== id);
+      
+          setselectedid(updatedArr);
+        } else {
+          // newarray.push(id);
+          var array1 = [...selectedid, id];
+       
+          setselectedid(array1);
+      
+        }
+      };
       const renderItem=({item,index})=>{
         return(
 
 
 <TouchableOpacity style={{...styles.headinsg1,backgroundColor:index%2!=0?  'white':'#EFF6FA'}} onPress={()=>props.navigation.navigate('NoteDetail')}> 
-<TouchableOpacity style={{...styles.datevie,width:wp(8)}} >
-         <Icon
-                         name="check-box-outline-blank"
-                         //check-box
-                         size={18}
-                         color={Colors.primary}
-                       
-                       />
+<TouchableOpacity onPress={()=>pushmessage(item.id)} style={{...styles.datevie,width:wp(8)}}>
+       
+{selectedid.includes(item.id) == true ? (
+            <Icon name="check-box" size={18} color={Colors.primary}   style={styles.checkbox}
+            />
+          ) : (
+            <Icon
+              name="check-box-outline-blank"
+              //check-box
+              size={18}
+              color={Colors.primary}
+              style={styles.checkbox}
+            />
+          )}
 </TouchableOpacity>
 
 <View style={styles.datevie}>
@@ -80,13 +111,13 @@ const Pendingnotes = (props) => {
       {item.time}
     </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(15)}}>
+<View style={{...styles.datevie,width:wp(20)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Patient}
     </ResponsiveText>
 </View>
 
-<View style={{...styles.datevie,width:wp(23)}}>
+<View style={{...styles.datevie,width:wp(30)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Location}
     </ResponsiveText>
@@ -118,13 +149,13 @@ const Pendingnotes = (props) => {
                 {'Time'}
               </ResponsiveText>
           </View>
-          <View style={{...styles.datevie,width:wp(15)}}>
+          <View style={{...styles.datevie,width:wp(20)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Patient'}
               </ResponsiveText>
           </View>
 
-          <View style={{...styles.datevie,width:wp(23)}}>
+          <View style={{...styles.datevie,width:wp(30)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Location'}
               </ResponsiveText>
@@ -240,16 +271,18 @@ const styles = StyleSheet.create({
       },
       datetxt:{fontSize:16,color:Colors.balckText,fontWeight:'600'},
       headinsg:{
-        borderWidth:0,
+        borderWidth:1,
+        borderBottomWidth:0,
         backgroundColor:Colors.primary,
-        marginHorizontal:wp(3),marginTop:hp(3),
+        marginHorizontal:wp(3.1),marginTop:hp(3),
         flexDirection:'row',
+        borderColor:Colors.borderColor
        
       },
       datevie:{
         borderWidth:1,
         paddingVertical:5,
-        width:wp(20),
+        width:wp(23),
         alignItems:'center',
         borderColor:Colors.borderColor
       },
