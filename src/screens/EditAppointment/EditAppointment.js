@@ -306,7 +306,7 @@ const styles = StyleSheet.create({
               backgroundColor:Colors.primary,
               marginHorizontal:wp(2.9),marginTop:hp(3),
               alignSelf:'center'
-            ,
+          ,
               flexDirection:'row',
         
             },
