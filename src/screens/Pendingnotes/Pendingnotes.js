@@ -18,7 +18,8 @@ const Pendingnotes = (props) => {
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Author:'john'
+          Author:'john',
+          title:'Pending'
         },
         {
           id:2,
@@ -26,7 +27,9 @@ const Pendingnotes = (props) => {
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Author:'john'
+          Author:'john',
+          title:'Pending'
+
         },
         {
           id:3,
@@ -34,7 +37,9 @@ const Pendingnotes = (props) => {
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Author:'john'
+          Author:'john',
+          title:'Pending'
+
         },
         {
           id:4,
@@ -42,7 +47,9 @@ const Pendingnotes = (props) => {
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Author:'john'
+          Author:'john',
+          title:'Pending'
+
         },
         {
           id:5,
@@ -50,7 +57,9 @@ const Pendingnotes = (props) => {
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Author:'john'
+          Author:'john',
+          title:'Pending'
+
         },
         {
           id:6,
@@ -58,7 +67,9 @@ const Pendingnotes = (props) => {
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Author:'john'
+          Author:'john',
+          title:'Pending'
+
         },
         {
           id:7,
@@ -66,7 +77,9 @@ const Pendingnotes = (props) => {
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Author:'john'
+          Author:'john',
+          title:'Pending'
+
         },
       ]
 
@@ -119,6 +132,12 @@ const Pendingnotes = (props) => {
       {item.time}
     </ResponsiveText>
 </View>
+
+<View style={{...styles.datevie,width:wp(20)}}>
+<ResponsiveText style={styles.headingtxt1}>
+      {item.title}
+    </ResponsiveText>
+</View>
 <View style={{...styles.datevie,width:wp(20)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Patient}
@@ -160,6 +179,12 @@ const Pendingnotes = (props) => {
           <View style={{...styles.datevie,width:wp(12)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Time'}
+              </ResponsiveText>
+          </View>
+
+          <View style={{...styles.datevie,width:wp(20)}}>
+          <ResponsiveText style={styles.headingtxt}>
+                {'Title'}
               </ResponsiveText>
           </View>
           <View style={{...styles.datevie,width:wp(20)}}>
