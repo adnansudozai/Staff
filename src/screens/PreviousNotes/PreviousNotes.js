@@ -14,39 +14,49 @@ const PreviousNotes = (props) => {
   
       let data=[
         {
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Title:'Psychiatric Evaluation'
+          Title:'Psychiatric Evaluation',
+          Author:'John Doe'
+           
         },
         {
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Title:'Psychiatric Evaluation'
+          Title:'Psychiatric Evaluation',
+          Author:'John Doe'
+
         },
         {
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Title:'Psychiatric Evaluation'
+          Title:'Psychiatric Evaluation',
+          Author:'John Doe'
+
         },
         {
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Title:'Psychiatric Evaluation'
+          Title:'Psychiatric Evaluation',
+          Author:'John Doe'
+
         },
         {
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
-          Title:'Psychiatric Evaluation'
+          Title:'Psychiatric Evaluation',
+          Author:'John Doe'
+
         },
        
       ]
@@ -75,6 +85,11 @@ const PreviousNotes = (props) => {
 <View style={{...styles.datevie,}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Patient}
+    </ResponsiveText>
+</View>
+<View style={{...styles.datevie,}}>
+<ResponsiveText style={styles.headingtxt1}>
+      {item.Author}
     </ResponsiveText>
 </View>
 
@@ -112,6 +127,11 @@ const PreviousNotes = (props) => {
           <View style={{...styles.datevie,}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Patient'}
+              </ResponsiveText>
+          </View>
+          <View style={{...styles.datevie,}}>
+          <ResponsiveText style={styles.headingtxt}>
+                {'Author'}
               </ResponsiveText>
           </View>
 

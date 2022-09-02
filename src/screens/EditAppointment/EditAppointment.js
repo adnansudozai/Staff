@@ -14,50 +14,35 @@ const EditAppointment = (props) => {
   const countries = ["Egypt", "Canada", "Australia", "Ireland"]
   let data=[
     {
-      date:'05/08/2022',
+      date:'05/08/22',
       time:'15:52',
       name:'Johr'
     },
     {
-      date:'05/08/2022',
+      date:'05/08/22',
       time:'15:52',
       name:'Johr'
     },
     {
-      date:'05/08/2022',
+      date:'05/08/22',
       time:'15:52',
       name:'Johr'
     },
     {
-      date:'05/08/2022',
+      date:'05/08/22',
       time:'15:52',
       name:'Johr'
     },
     {
-      date:'05/08/2022',
+      date:'05/08/22',
       time:'15:52',
       name:'Johr'
     },
     {
-      date:'05/08/2022',
+      date:'05/08/22',
       time:'15:52',
       name:'Johr'
     },
-    {
-      date:'05/08/2022',
-      time:'15:52',
-      name:'Johr'
-    },
-    {
-      date:'05/08/2022',
-      time:'15:52',
-      name:'Johr'
-    },
-    {
-      date:'05/08/2022',
-      time:'15:52',
-      name:'Johr'
-    }
   ]
   const renderItem=({item,index})=>{
     return(
@@ -78,7 +63,7 @@ const EditAppointment = (props) => {
             {item.name}
           </ResponsiveText>
       </View>
-      <View style={{...styles.actionview,borderRightWidth:0}}>
+      <View style={{...styles.actionview,}}>
         {/* <TouchableOpacity onPress={()=>props.navigation.navigate('EditAppointment')}>
       <Icon
                           name="edit"
@@ -102,6 +87,44 @@ const EditAppointment = (props) => {
       </View>
     )
   }
+
+  const ListHeaderComponent = () => {
+    return (
+      <View style={styles.headinsg}> 
+ <View style={styles.datevie}>
+ <ResponsiveText style={styles.headingtxt}>
+       {'Date'}
+     </ResponsiveText>
+ </View>
+
+ <View style={styles.datevie}>
+ <ResponsiveText style={styles.headingtxt}>
+       {'Time'}
+     </ResponsiveText>
+ </View>
+ <View style={styles.datevie}>
+ <ResponsiveText style={styles.headingtxt}>
+       {'Patient'}
+     </ResponsiveText>
+ </View>
+ <View style={{...styles.datevie,}}>
+ <ResponsiveText style={styles.headingtxt}>
+       {''}
+     </ResponsiveText>
+ </View>
+            
+ </View>
+
+    );
+  };
+
+  const ConceltentFooter=()=>{
+    return(
+      <View style={styles.footerstyle}/>
+
+     
+    )
+    }
   return (
     <Container backgroundColor={Colors.statusbarcolor}>
         <Simpleheader
@@ -198,43 +221,20 @@ const EditAppointment = (props) => {
           </ResponsiveText>
             </TouchableOpacity>
         </View>
-        <View style={styles.headinsg}> 
- <View style={styles.datevie}>
- <ResponsiveText style={styles.headingtxt}>
-       {'Date'}
-     </ResponsiveText>
- </View>
-
- <View style={styles.datevie}>
- <ResponsiveText style={styles.headingtxt}>
-       {'Time'}
-     </ResponsiveText>
- </View>
- <View style={styles.datevie}>
- <ResponsiveText style={styles.headingtxt}>
-       {'Patient'}
-     </ResponsiveText>
- </View>
- <View style={{...styles.datevie,borderRightWidth:0}}>
- <ResponsiveText style={styles.headingtxt}>
-       {''}
-     </ResponsiveText>
- </View>
-            
- </View>
- <View>
+      
+ <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
  <FlatList
                showsVerticalScrollIndicator={false}
-            
-              
-               contentContainerStyle={{
-                 paddingBottom: Platform.OS == 'ios' ? hp(10) : hp(15),
-               }}
+               listKey={item => item.value.toString()}
                data={data}
+             
+               ListHeaderComponent={ListHeaderComponent}
+               ListFooterComponent={ConceltentFooter}
+
                renderItem={renderItem}
                keyExtractor={(item, index) => index.toString()}
              />
- </View>
+</ScrollView>
  <View style={styles.btnview}>
             <Button
             title={'Update Booking'}
@@ -274,41 +274,46 @@ const styles = StyleSheet.create({
               borderWidth:0,
               marginHorizontal:wp(3),
               flexDirection:'row',
-              justifyContent:'space-between'
+               marginLeft:wp(10),
+              alignSelf:'center',
             },
             headingtxt1:{
               fontSize:12,fontWeight:'700',color:Colors.balckText
             },
             datevie1:{
-              borderRightWidth:1,
-              paddingVertical:15,
-              width:wp(23),
+              borderWidth:1,
+              paddingVertical:2,
+              width:wp(20),
               alignItems:'center',
               borderColor:Colors.borderColor,
-              justifyContent:'center'
+            
             },
             actionview:{
-              paddingVertical:15,
-              width:wp(23),
+              paddingVertical:2,
+              width:wp(20),
+              borderWidth:1,
               alignItems:'center',
               flexDirection:'row',
               justifyContent:'space-evenly',
+              borderColor:Colors.borderColor
           
             },
             datetxt:{fontSize:16,color:Colors.balckText,fontWeight:'600'},
             headinsg:{
               borderWidth:0,
+              marginLeft:wp(10),
+
               backgroundColor:Colors.primary,
-              marginHorizontal:wp(3),marginTop:hp(3),
-              borderTopRightRadius:7,
-              borderTopLeftRadius:7,
+              marginHorizontal:wp(2.9),marginTop:hp(3),
+              alignSelf:'center'
+            ,
               flexDirection:'row',
-              justifyContent:'space-between'
+        
             },
             datevie:{
-              borderRightWidth:1,
-              paddingVertical:25,
-              width:wp(23),
+              borderWidth:1,
+              paddingVertical:2,
+              width:wp(20),
               alignItems:'center',
               borderColor:Colors.borderColor
             },

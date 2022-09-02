@@ -18,12 +18,12 @@ const [selectedid, setselectedid] = useState([]);
         {
           id:1,
             message:'Message',
-            datetime:'Wed 12:30 PM'
+            datetime:'Wed 12:30'
         },
         {
           id:2,
             message:'Message',
-            datetime:'Wed 12:30 PM'
+            datetime:'Wed 12:30'
         },
       
       ]

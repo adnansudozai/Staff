@@ -163,6 +163,11 @@ const NoteDetail = props => {
    {'Provider'}
  </ResponsiveText>
 </View>
+<View style={{...styles.datevie,width:wp(18)}}>
+<ResponsiveText style={styles.headingtxt}>
+   {'Author'}
+ </ResponsiveText>
+</View>
 <View style={{...styles.datevie,width:wp(35)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Location'}
@@ -351,26 +356,29 @@ const NoteDetail = props => {
   };
   let conceltent=[
     {
-      date:'05/08/2022:12:55:PM',
+      date:'05/08/22:12:55',
       Provider:'Doc PSY,MD',
       Location:'Willowbrook Clinic',
       VisitType:'New Pt, Outpatient Office Visit',
-      Status:'Scheduled'
+      Status:'Scheduled',
+      Author:'John'
     },
     {
-      date:'05/08/2022:12:55:PM',
+      date:'05/08/22:12:55',
+      Provider:'Doc PSY,MD',
+      Location:'Willowbrook Clinic',
+      VisitType:'New Pt, Outpatient Office Visit',
+      Status:'Scheduled',
+      Author:'John'
 
+    }, {
+      date:'05/08/22:12:55',
       Provider:'Doc PSY,MD',
       Location:'Willowbrook Clinic',
       VisitType:'New Pt, Outpatient Office Visit',
-      Status:'Scheduled'
-    },
-    {
-      date:'05/08/2022:12:55:PM',
-      Provider:'Doc PSY,MD',
-      Location:'Willowbrook Clinic',
-      VisitType:'New Pt, Outpatient Office Visit',
-      Status:'Scheduled'
+      Status:'Scheduled',
+      Author:'John'
+
     },
    
   ]
@@ -385,6 +393,11 @@ const NoteDetail = props => {
 <View style={{...styles.datevie,width:wp(26)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.Provider}
+ </ResponsiveText>
+</View>
+<View style={{...styles.datevie,width:wp(18)}}>
+<ResponsiveText style={styles.headingtxt1}>
+   {item.Author}
  </ResponsiveText>
 </View>
 <View style={{...styles.datevie,width:wp(35)}}>

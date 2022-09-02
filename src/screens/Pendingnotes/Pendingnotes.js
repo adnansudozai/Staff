@@ -14,51 +14,59 @@ const Pendingnotes = (props) => {
     let data=[
         {
           id:1,
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
-          Location:'Willowbro Clinic'
+          Location:'Willowbro Clinic',
+          Author:'john'
         },
         {
           id:2,
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
-          Location:'Willowbro Clinic'
+          Location:'Willowbro Clinic',
+          Author:'john'
         },
         {
           id:3,
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
-          Location:'Willowbro Clinic'
+          Location:'Willowbro Clinic',
+          Author:'john'
         },
         {
           id:4,
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
-          Location:'Willowbro Clinic'
+          Location:'Willowbro Clinic',
+          Author:'john'
         },
         {
           id:5,
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
-          Location:'Willowbro Clinic'
+          Location:'Willowbro Clinic',
+          Author:'john'
         },
         {
           id:6,
-          date:'05/08/2022',
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
-          Location:'Willowbro Clinic'
+          Location:'Willowbro Clinic',
+          Author:'john'
         },
-        {  id:7,
-          date:'05/08/2022',
+        {
+          id:7,
+          date:'05/08/22',
           time:'15:52',
           Patient:'John Doe',
-          Location:'Willowbro Clinic'
+          Location:'Willowbro Clinic',
+          Author:'john'
         },
       ]
 
@@ -116,6 +124,11 @@ const Pendingnotes = (props) => {
       {item.Patient}
     </ResponsiveText>
 </View>
+<View style={{...styles.datevie,width:wp(18)}}>
+<ResponsiveText style={styles.headingtxt1}>
+      {item.Author}
+    </ResponsiveText>
+</View>
 
 <View style={{...styles.datevie,width:wp(30)}}>
 <ResponsiveText style={styles.headingtxt1}>
@@ -154,6 +167,11 @@ const Pendingnotes = (props) => {
                 {'Patient'}
               </ResponsiveText>
           </View>
+          <View style={{...styles.datevie,width:wp(18)}}>
+          <ResponsiveText style={styles.headingtxt}>
+                {'Author'}
+              </ResponsiveText>
+          </View>
 
           <View style={{...styles.datevie,width:wp(30)}}>
           <ResponsiveText style={styles.headingtxt}>
@@ -185,7 +203,8 @@ const Pendingnotes = (props) => {
               </ResponsiveText>
           </View>
   
- <ScrollView>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+
   <View  style={{borderWidth:0,alignSelf:'center',justifyContent:'center',alignItems:'center'}}>
  <FlatList
                showsVerticalScrollIndicator={false}
@@ -216,7 +235,7 @@ const styles = StyleSheet.create({
         borderWidth:0,
         marginHorizontal:wp(3),
         flexDirection:'row',
-        justifyContent:'space-between'
+    
       },
       headingtxt1:{
         fontSize:12,fontWeight:'700',color:Colors.balckText
@@ -257,7 +276,7 @@ const styles = StyleSheet.create({
         borderWidth:0,
       
         flexDirection:'row',
-        justifyContent:'space-between',
+
         marginHorizontal:wp(3),
         borderColor:Colors.borderColor
       },
