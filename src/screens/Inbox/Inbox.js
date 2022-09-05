@@ -16,20 +16,26 @@ const Inbox = (props) => {
           type:'Create Message',
           icon:Images.create_message,
           totalmessage:0,
-          navigation:'Createmessage'
+          // navigation:'Createmessage'
+          navigation:'',
+      id:5,
+
         },
         {
           type:'Current Message',
           icon:Images.current_message,
           totalmessage:11,
-          navigation:'Message'
+          // navigation:'Message'
+          navigation:'',
+      id:2
 
         },
         {
           type:'Previous Message',
           icon:Images.previous_message,
           totalmessage:3,
-          navigation:''
+          navigation:'',
+      id:3
 
         }
         ,
@@ -37,7 +43,8 @@ const Inbox = (props) => {
           type:'Draft Message',
           icon:Images.draft_message,
           totalmessage:2,
-          navigation:'Draftmessage'
+          navigation:'Draftmessage',
+      id:4
 
         }
       ]
@@ -53,7 +60,8 @@ const Inbox = (props) => {
           type:'Orders',
           icon:Images.order_tick,
           totalmessage:13,
-          navigation:'Orders'
+          navigation:'Orders',
+      id:5
 
         },
       ]
@@ -69,20 +77,23 @@ const Inbox = (props) => {
           type:'Pending Notes',
           icon:Images.pending_notes,
           totalmessage:4,
-          navigation:'Pendingnotes'
+          navigation:'Pendingnotes',
+          id:1,
         },
         {
           type:'Draft Notes',
           icon:Images.draft_notes,
           totalmessage:4,
-          navigation:'DraftNotes'
+          navigation:'DraftNotes',
+          id:1,
 
         },
         {
           type:'Previous Notes',
           icon:Images.previous_notes,
           totalmessage:7,
-          navigation:'PreviousNotes'
+          navigation:'PreviousNotes',
+          id:1,
 
         }
         
@@ -111,10 +122,9 @@ const Inbox = (props) => {
     }
   };
   const rendersubcategory=({item})=>{
-
-  
+console.log(item.id==1?'0k':'no')
     return(
-      <TouchableOpacity onPress={()=>props.navigation.navigate(item.navigation)} style={styles.subflatlist}>
+      <TouchableOpacity onPress={()=>item.id==1?props.navigation.navigate(item.navigation):console.log('call')} style={styles.subflatlist}>
  <View style={styles.nameicon}>
 <Icons icon={item.icon}/>
 <ResponsiveText style={styles.nametxt}>

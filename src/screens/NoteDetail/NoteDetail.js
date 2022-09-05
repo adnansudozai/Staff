@@ -125,7 +125,7 @@ const NoteDetail = props => {
  </View>
 
 
- <View style={{...styles.datevie,width:wp(22)}}>
+ <View style={{...styles.datevie,width:wp(25)}}>
 <ResponsiveText style={styles.headingtxt}>
    {'Weight (lbs)'}
  </ResponsiveText>
@@ -423,14 +423,14 @@ const NoteDetail = props => {
   let data=[
     {
      id:1,
-     date:'No Data',
-     bp:'No Data',
-     hr:'No Data',
-     rr:'No Data',
-     temp:'No Data',
-     weight:'No Data',
-     height:'No Data',
-     bmi:'No Data',
+     date:'',
+     bp:'',
+     hr:'',
+     rr:'',
+     temp:'',
+     weight:'',
+     height:'',
+     bmi:'',
 
 
 
@@ -477,7 +477,7 @@ const NoteDetail = props => {
  </View>
 
 
- <View style={{...styles.datevie,width:wp(22)}}>
+ <View style={{...styles.datevie,width:wp(25)}}>
 <ResponsiveText style={styles.headingtxt1}>
    {item.weight}
  </ResponsiveText>
