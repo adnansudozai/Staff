@@ -16,7 +16,7 @@ import Message from '../screens/Message/Message';
 import Draftmessage from '../screens/Draftmessage/Draftmessage';
 import Orders from '../screens/Orders/Orders';
 import Detailnotes from '../screens/Detailnotes/Detailnotes';
-
+import DraftNotedetail from '../screens/DraftNotesdetail/DraftNotesdetail';
 const Stack = createNativeStackNavigator();
 
 const MainStack = ({navigation, style}) => {
@@ -40,6 +40,7 @@ const MainStack = ({navigation, style}) => {
       <Stack.Screen name="BottomTab" component={BottomTab} />
       <Stack.Screen name="Orders" component={Orders} />
       <Stack.Screen name="Detailnotes" component={Detailnotes} />
+      <Stack.Screen name="DraftNotedetail" component={DraftNotedetail} />
     </Stack.Navigator>
     // </Animated.View>
 

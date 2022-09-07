@@ -14,8 +14,7 @@ const Pendingnotes = (props) => {
     let data=[
         {
           id:1,
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Author:'john',
@@ -23,69 +22,54 @@ const Pendingnotes = (props) => {
         },
         {
           id:2,
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Author:'john',
           title:'Pending'
-
-        },
-        {
+        }, {
           id:3,
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Author:'john',
           title:'Pending'
-
-        },
-        {
+        }, {
           id:4,
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Author:'john',
           title:'Pending'
-
-        },
-        {
+        }, {
           id:5,
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Author:'john',
           title:'Pending'
-
         },
-        {
-          id:6,
-          date:'05/08/22',
-          time:'15:52',
-          Patient:'John Doe',
-          Location:'Willowbro Clinic',
-          Author:'john',
-          title:'Pending'
-
-        },
-        {
-          id:7,
-          date:'05/08/22',
-          time:'15:52',
-          Patient:'John Doe',
-          Location:'Willowbro Clinic',
-          Author:'john',
-          title:'Pending'
-
-        },
+       
       ]
 
       const [selectedid, setselectedid] = useState([]);
-
-   
+      const [allselcted, setallselcted] = useState(false);
+      var array1=[];
+      const pushallid =() => {
+        setallselcted(!allselcted)
+        if (allselcted==true) {
+          setselectedid([])
+        } else {
+          
+          data.map((item)=>{
+  array1.push(item.id);
+       
+       
+          })
+          setselectedid(array1);
+        }
+      
+      };
 
       const pushmessage = id => {
         if (selectedid.includes(id) === true) {
@@ -127,11 +111,7 @@ const Pendingnotes = (props) => {
       {item.date}
     </ResponsiveText>
 </View>
-<View style={{...styles.datevie,width:wp(12)}}>
-<ResponsiveText style={styles.headingtxt1}>
-      {item.time}
-    </ResponsiveText>
-</View>
+
 
 <View style={{...styles.datevie,width:wp(20)}}>
 <ResponsiveText style={styles.headingtxt1}>
@@ -161,14 +141,24 @@ const Pendingnotes = (props) => {
       const ListHeaderComponent = () => {
         return (
           <View style={styles.headinsg}> 
-          <TouchableOpacity style={{...styles.datevie,width:wp(8)}}>
-                   <Icon
+          <TouchableOpacity onPress={()=>pushallid()} style={{...styles.datevie,width:wp(8)}}>
+             {allselcted?      <Icon
+                                   name="check-box"
+                                   //check-box
+                                   size={18}
+                                   color={Colors.textColorWhite}
+                                 
+                                 />
+                                 :
+
+<Icon
                                    name="check-box-outline-blank"
                                    //check-box
                                    size={18}
                                    color={Colors.textColorWhite}
                                  
                                  />
+             }
           </TouchableOpacity>
          
           <View style={styles.datevie}>
@@ -176,11 +166,7 @@ const Pendingnotes = (props) => {
                 {'Date'}
               </ResponsiveText>
           </View>
-          <View style={{...styles.datevie,width:wp(12)}}>
-          <ResponsiveText style={styles.headingtxt}>
-                {'Time'}
-              </ResponsiveText>
-          </View>
+        
 
           <View style={{...styles.datevie,width:wp(20)}}>
           <ResponsiveText style={styles.headingtxt}>
@@ -227,7 +213,19 @@ const Pendingnotes = (props) => {
                 {'All Notes'}
               </ResponsiveText>
           </View>
-  
+          {selectedid.length!=0?
+  <View style={{marginHorizontal:wp(7),marginTop:10}}>
+<TouchableOpacity style={{...styles.btnstyle,flexDirection:'row'}}>
+
+
+<Icons icon={Images.signpen}
+style={{width:wp(5),height:wp(5)}}/>
+<ResponsiveText style={styles.btntext}>
+              {'Sign'}
+            </ResponsiveText>
+</TouchableOpacity>
+</View>
+:null}
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 
   <View  style={{borderWidth:0,alignSelf:'center',justifyContent:'center',alignItems:'center'}}>
@@ -326,7 +324,7 @@ const styles = StyleSheet.create({
       datevie:{
         borderWidth:1,
         paddingVertical:5,
-        width:wp(23),
+        width:wp(29),
         alignItems:'center',
         borderColor:Colors.borderColor
       },
@@ -335,6 +333,20 @@ const styles = StyleSheet.create({
       },
       headingtxt1:{
         fontSize:14,fontWeight:'400',color:'black'
+      },
+      btnstyle:{
+        alignItems:'center',
+        justifyContent:'center',
+        borderWidth:1,
+        borderRadius:5,
+        padding:10,
+        borderColor:Colors.borderColor,
+        width:wp(40)
+      },
+      btntext: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: Colors.balckText,
       },
       /////table end
 })

@@ -9,7 +9,7 @@ import { ScrollView } from 'react-native-virtualized-view';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
-const Detailnotes = (props) => {
+const DraftNotedetail = (props) => {
 
     return (
         <Container backgroundColor={Colors.textColorWhite}>
@@ -18,22 +18,42 @@ const Detailnotes = (props) => {
                 navigation={props.navigation}
                 headercontainer={{ backgroundColor: Colors.textColorWhite }}
             />
+            <View style={{borderWidth:0,marginHorizontal:wp(12),flexDirection:'row',alignItems:'center',justifyContent:'space-evenly',  marginTop: hp(5),}}>
             <TouchableOpacity
                 style={styles.btnciew}>
 
 
-                <Icons icon={Images.addicon}
+                <Icons icon={Images.trash}
                     style={{ width: wp(5), height: wp(5) }} />
 
 
                 <ResponsiveText style={{ ...styles.textbtn }}>
                     {
-                        'Create Addendum'
+                        'Delete'
                     }
                 </ResponsiveText>
 
 
             </TouchableOpacity>
+
+            <TouchableOpacity
+                style={styles.btnciew}>
+
+
+                <Icons icon={Images.signpen}
+                    style={{ width: wp(5), height: wp(5) }} />
+
+
+                <ResponsiveText style={{ ...styles.textbtn }}>
+                    {
+                        'Sign'
+                    }
+                </ResponsiveText>
+
+
+            </TouchableOpacity>
+            
+            </View>
             <View style={{borderWidth:0,marginHorizontal:wp(5),marginTop:20}}> 
                 <ResponsiveText style={{ ...styles.text, color: Colors.primary }}>
                         {'Psychiatric Evaluation:'}
@@ -123,7 +143,7 @@ const Detailnotes = (props) => {
             </View>
             <View style={styles.rowtext}>
                 <ResponsiveText style={{ ...styles.text, color: '#646464' }}>
-                    {'E-Signed By:'}
+                    {'Created By:'}
                 </ResponsiveText>
 
                 <ResponsiveText style={{ ...styles.text, marginLeft: 5, fontWeight: '500', }}>
@@ -141,15 +161,15 @@ const Detailnotes = (props) => {
     )
 }
 
-export default Detailnotes
+export default DraftNotedetail
 
 const styles = StyleSheet.create({
 
     btnciew: {
         borderWidth: 1,
-        marginTop: hp(5),
+      width:wp(30),
         marginHorizontal: wp(5),
-        paddingVertical: 15,
+        paddingVertical: 10,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',

@@ -16,8 +16,7 @@ const DraftNotes = (props) => {
   
       let data=[
         {
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Title:'Psychiatric Evaluation',
@@ -25,16 +24,7 @@ const DraftNotes = (props) => {
 
         },
         {
-          date:'05/08/22',
-          time:'15:52',
-          Patient:'John Doe',
-          Location:'Willowbro Clinic',
-          Title:'Psychiatric Evaluation',
-          Author:'John Doe'
-        },
-        {
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Title:'Psychiatric Evaluation',
@@ -42,8 +32,7 @@ const DraftNotes = (props) => {
 
         },
         {
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Title:'Psychiatric Evaluation',
@@ -51,8 +40,7 @@ const DraftNotes = (props) => {
 
         },
         {
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Title:'Psychiatric Evaluation',
@@ -60,8 +48,7 @@ const DraftNotes = (props) => {
 
         },
         {
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Title:'Psychiatric Evaluation',
@@ -69,8 +56,7 @@ const DraftNotes = (props) => {
 
         },
         {
-          date:'05/08/22',
-          time:'15:52',
+          date:'05/08/22:15:52',
           Patient:'John Doe',
           Location:'Willowbro Clinic',
           Title:'Psychiatric Evaluation',
@@ -83,7 +69,7 @@ const DraftNotes = (props) => {
         return(
 
 
-<TouchableOpacity onPress={()=>props.navigation.navigate('Detailnotes')} style={{...styles.headinsg1,backgroundColor:index%2!=0?  'white':'#EFF6FA'}}> 
+<TouchableOpacity onPress={()=>props.navigation.navigate('DraftNotedetail')} style={{...styles.headinsg1,backgroundColor:index%2!=0?  'white':'#EFF6FA'}}> 
 
 <View style={styles.datevie}>
 <ResponsiveText style={styles.headingtxt1}>
@@ -95,11 +81,7 @@ const DraftNotes = (props) => {
                 {item.Title}
               </ResponsiveText>
           </View>
-          <View style={{...styles.datevie,width:wp(17)}}>
-<ResponsiveText style={styles.headingtxt1}>
-      {item.time}
-    </ResponsiveText>
-</View>
+     
 <View style={{...styles.datevie,}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.Patient}
@@ -136,12 +118,7 @@ const DraftNotes = (props) => {
                 {'Title'}
               </ResponsiveText>
           </View>
-          <View style={{...styles.datevie,width:wp(17)}}>
-
-          <ResponsiveText style={styles.headingtxt}>
-                {'Time'}
-              </ResponsiveText>
-          </View>
+         
           <View style={{...styles.datevie,}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Patient'}
@@ -265,7 +242,7 @@ const styles = StyleSheet.create({
    datevie:{
      borderWidth:1,
      paddingVertical:3,
-     width:wp(23),
+     width:wp(29),
      alignItems:'center',
      borderColor:Colors.borderColor
    },
