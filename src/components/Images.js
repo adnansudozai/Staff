@@ -43,6 +43,11 @@ const Images = {
   edit: require('../assets/Icons/Schedule/edit.png'),
   filter: require('../assets/Icons/Schedule/filter.png'),
   addicon: require('../assets/Icons/Inbox/add-circle.png'),
+  plussign: require('../assets/Icons/Inbox/plussign.png'),
+  Copyicon: require('../assets/Icons/Inbox/Copyicon.png'),
+  person: require('../assets/Icons/Inbox/person.png'),
+  imageindicator: require('../assets/Icons/Inbox/imageindicator.png'),
+  addimage: require('../assets/Icons/Inbox/addimage.png'),
 
 
 };

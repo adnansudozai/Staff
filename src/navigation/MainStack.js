@@ -17,6 +17,9 @@ import Draftmessage from '../screens/Draftmessage/Draftmessage';
 import Orders from '../screens/Orders/Orders';
 import Detailnotes from '../screens/Detailnotes/Detailnotes';
 import DraftNotedetail from '../screens/DraftNotesdetail/DraftNotesdetail';
+import Createnotes from '../screens/CreateNotes/CreateNotes';
+import Createvisit from '../screens/CreateVisit/CreateVisit';
+import Createpatient from '../screens/Createpatient/Createpatient';
 const Stack = createNativeStackNavigator();
 
 const MainStack = ({navigation, style}) => {
@@ -29,10 +32,12 @@ const MainStack = ({navigation, style}) => {
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="GetStarted" component={GetStarted} />
       <Stack.Screen name="NoteDetail" component={NoteDetail} />
+      <Stack.Screen name="Createvisit" component={Createvisit} />
       <Stack.Screen name="BookAppointment" component={BookAppointment} />
       <Stack.Screen name="EditAppointment" component={EditAppointment} />
       <Stack.Screen name="Pendingnotes" component={Pendingnotes} />
       <Stack.Screen name="PreviousNotes" component={PreviousNotes} />
+      <Stack.Screen name="Createpatient" component={Createpatient} />
       <Stack.Screen name="DraftNotes" component={DraftNotes} />
       <Stack.Screen name="Createmessage" component={Createmessage} />
       <Stack.Screen name="Message" component={Message} />
@@ -40,6 +45,7 @@ const MainStack = ({navigation, style}) => {
       <Stack.Screen name="BottomTab" component={BottomTab} />
       <Stack.Screen name="Orders" component={Orders} />
       <Stack.Screen name="Detailnotes" component={Detailnotes} />
+      <Stack.Screen name="Createnotes" component={Createnotes} />
       <Stack.Screen name="DraftNotedetail" component={DraftNotedetail} />
     </Stack.Navigator>
     // </Animated.View>

@@ -27,7 +27,7 @@ const [focus,setfocus]=useState(false)
     )}
    }
   
-     
+     dropdownStyle={{borderWidth:0,borderRadius:10}}
     defaultButtonText={props.defaultButtonText}
     buttonTextStyle={{color:props.textcolor,borderWidth:0,position:'absolute',right:5,fontSize: props.fontSize?props.fontSize:12,}}
     onFocus={()=>setfocus(!focus)}

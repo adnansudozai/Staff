@@ -1,10 +1,12 @@
-import { StyleSheet, Text,TouchableOpacity, View ,FlatList} from 'react-native'
+import { StyleSheet,TouchableOpacity, View ,FlatList} from 'react-native'
 import React from 'react'
 import { Container,Colors,Header,ResponsiveText,Images,Icons} from '../../components/index'
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
+import {ScrollView} from 'react-native-virtualized-view';
+
 const Inbox = (props) => {
   const DATA = [
     
@@ -73,6 +75,13 @@ const Inbox = (props) => {
       ctype:'Notes',
       cicon:Images.notes,
       cdata:[
+        {
+          type:'Create Notes',
+          icon:Images.create_message,
+          totalmessage:4,
+          navigation:'Createnotes',
+          id:1,
+        },
         {
           type:'Pending Notes',
           icon:Images.pending_notes,
@@ -192,11 +201,55 @@ const renderItem = ({ item }) => {
      name={'Elaine Hale'}
     //  onPress={()=>props.navigation.openDrawer()}
      />
+
+<View style={styles.butonview}>
+<View style={{borderWidth:0,flexDirection:'row',alignSelf:'flex-end'}}>
+            <TouchableOpacity
+            onPress={()=>props.navigation.navigate('Createpatient')}
+
+                style={styles.btnciew}>
+
+
+                <Icons icon={Images.plussign}
+                    style={{ width: wp(4), height: wp(4) }} />
+
+
+                <ResponsiveText style={{ ...styles.textbtn }}>
+                    {
+                        'Patient'
+                    }
+                </ResponsiveText>
+
+
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={()=>props.navigation.navigate('Createvisit')}
+                style={styles.btnciew}>
+
+
+                <Icons icon={Images.plussign}
+                    style={{ width: wp(4), height: wp(4) }} />
+
+
+                <ResponsiveText style={{ ...styles.textbtn }}>
+                    {
+                        'Visit'
+                    }
+                </ResponsiveText>
+
+
+            </TouchableOpacity>
+            
+            </View>
+     </View>
+     <ScrollView>
      <View style={styles.inbox}>
       <ResponsiveText style={styles.inboxtxt}>
         {'Inbox'}
       </ResponsiveText>
      </View>
+
   <View>
               <FlatList
                 showsVerticalScrollIndicator={false}
@@ -204,10 +257,12 @@ const renderItem = ({ item }) => {
                   paddingBottom: Platform.OS == 'ios' ? hp(25) : hp(30),
                 }}
                 data={DATA}
+                listKey={(item, index) => index.toString()}
                 renderItem={renderItem}
                 keyExtractor={(item, index) => index.toString()}
               />
   </View>
+  </ScrollView>
     </Container>
   )
 }
@@ -215,7 +270,8 @@ const renderItem = ({ item }) => {
 export default Inbox
 
 const styles = StyleSheet.create({
-  inbox:{borderWidth:0,marginHorizontal:wp(5),paddingVertical:15,borderBottomWidth:1,borderColor:Colors.lineseprator},
+  inbox:{borderWidth:0,marginHorizontal:wp(5),paddingVertical:15,borderBottomWidth:0,borderColor:Colors.lineseprator},
+  butonview:{borderWidth:0,marginHorizontal:wp(5),paddingVertical:15,borderBottomWidth:1,borderColor:Colors.lineseprator,alignItems:'flex-end'},
   inboxtxt:{fontSize:20,fontWeight:'bold',color:Colors.textcolorblack},
   categaty:{borderWidth:0,marginTop:20,flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginHorizontal:wp(5)},
   typetext:{fontSize:20,fontWeight:'bold',color:Colors.primary,marginLeft:10},
@@ -227,5 +283,23 @@ const styles = StyleSheet.create({
   sublist:{borderWidth:0},
   subflatlist:{
     borderWidth:1,justifyContent:'space-between',alignItems:'center',flexDirection:'row',marginTop:10,marginHorizontal:wp(5),paddingVertical:8,paddingHorizontal:5,borderRadius:10,borderColor:Colors.borderColor
-  }
+  },
+  textbtn: {
+    fontSize: 14,
+    fontWeight: '500',
+    color: Colors.balckText,
+    marginLeft: 10
+},
+  btnciew: {
+    borderWidth: 1,
+  width:wp(23),
+   marginLeft:wp(3),
+    paddingVertical: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 7,
+    alignSelf:'flex-end',
+    borderColor: Colors.borderColor
+},
 })

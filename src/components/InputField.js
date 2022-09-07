@@ -23,7 +23,7 @@ const InputField = (props) => {
             
                 placeholderTextColor={props.placeholderTextColor ? props.placeholderTextColor : "#94959B"}
                 secureTextEntry={props.secureTextEntry?props.secureTextEntry:false}
-                style={{height:props.height?props.height:hp(6.2),width:props.righticon?wp(72):props.width?props.width:wp(80),paddingLeft:8,color:Colors.borderColor,fontSize:15,fontWeight:'500',backgroundColor:props.backgroundColor?props.backgroundColor:'',borderRadius:5}}
+                style={{height:props.height?props.height:hp(6.2),width:props.width?props.width:wp(80),paddingLeft:8,color:Colors.borderColor,fontSize:15,fontWeight:'500',backgroundColor:props.backgroundColor?props.backgroundColor:'',borderRadius:5}}
             />
     {props.righticon &&
     <TouchableOpacity onPress={props.onrighticonpress}>
@@ -51,6 +51,7 @@ justifyContent:'space-between',
 borderRadius:5,
 borderColor:Colors.borderColor,
 alignItems:'center',
+paddingHorizontal:wp(2)
 
 
 }
