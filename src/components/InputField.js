@@ -31,6 +31,7 @@ const InputField = (props) => {
                 <Icon
                           name={props.righticon}
                           size={18}
+                          style={{color:props.color?props.color:'black'}}
                         
                         />
                 </TouchableOpacity>

@@ -1,4 +1,4 @@
-import { View, StyleSheet ,TouchableOpacity,FlatList,Modal} from 'react-native'
+import { View, StyleSheet ,ScrollView,FlatList,Modal} from 'react-native'
 import React,{useState} from 'react'
 import { Container,Colors,Simpleheader,Button,Images,InputField,Icons,Dropdown} from '../../components/index'
 import {
@@ -11,9 +11,11 @@ const Createvisit = (props) => {
 
   return (
     <Container backgroundColor={Colors.statusbarcolor}>
-        <Simpleheader
+        {/* <Simpleheader
         title={'Create Visit'}
-        navigation={props.navigation}/>
+        navigation={props.navigation}/> */}
+
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{marginBottom:hp(5)}}>
         <View style={{...styles.inputview,marginTop:hp(4)}}>
         <InputField
         placeholder={'Patient Name'}
@@ -132,6 +134,7 @@ const Createvisit = (props) => {
             title={'Create Booking'}
             onPress={()=>props.navigation.goBack()}/>
         </View>
+        </ScrollView>
    </Container>
   )
 }

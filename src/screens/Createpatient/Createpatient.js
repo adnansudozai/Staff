@@ -1,6 +1,6 @@
 import { View, StyleSheet ,TouchableOpacity,ScrollView,Image} from 'react-native'
 import React,{useState} from 'react'
-import { Container,Colors,Simpleheader,Button,Images,InputField,ResponsiveText,Dropdown} from '../../components/index'
+import { Container,Colors,Simpleheader,Icons,Button,Images,InputField,ResponsiveText,Dropdown} from '../../components/index'
 import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
@@ -8,23 +8,28 @@ import {
 
 const Createpatient = (props) => {
   const gender = ["Male", "Female", "Other",]
+  const relation = ["Friend", "Family", "Other",]
   const Language = ["English", "Hindi", "Urdu","Arabic"]
+  const [sameaddress,setsameaddress]=useState('No')
+  const [guardianaddress,setguardianaddress]=useState('No')
+  const [emergencycontact,setemergencycontact]=useState('other')
+  const [Permission,setPermission]=useState('No')
 
   return (
     <Container backgroundColor={Colors.statusbarcolor}>
-        <Simpleheader
+        {/* <Simpleheader
         title={'Create Patient'}
-        navigation={props.navigation}/>
+        navigation={props.navigation}/> */}
 
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:hp(20)}}>
 
 <View style={styles.imageview}>
 
-<View style={styles.img}>
+<View style={{...styles.img,}}>
 
 <Image
 source={Images.person}
-style={styles.img}
+style={{...styles.img,borderWidth:0}}
 resizeMode='contain'
 
 />
@@ -213,11 +218,305 @@ width={wp(37)}
         
         />
         </View>
+        <View style={styles.textradio}>
+          <ResponsiveText style={{...styles.textheading1,width:wp(60)}}>
+              {'Is your mailing address same as above?'}
+            </ResponsiveText>
+          <View style={styles.radioview}>
 
+            <TouchableOpacity onPress={()=>setsameaddress('Yes')} style={styles.radiotext}>
+          <Icons icon={sameaddress=='Yes'?Images.Radiocheck:Images.radiouncheck}
+          
+style={{width:wp(4),height:wp(4)}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'Yes'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+<TouchableOpacity  onPress={()=>setsameaddress('No')} style={{...styles.radiotext ,marginLeft:10}}>
+<Icons icon={sameaddress=='No'?Images.Radiocheck:Images.radiouncheck}
+
+          
+style={{width:wp(4),height:wp(4)}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'No'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+
+        </View>
+          </View>
+          <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Address line 1'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+
+
+        <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Address line 2'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+        <View style={styles.textradio}>
+          <ResponsiveText style={{...styles.textheading1,width:wp(60)}}>
+              {'Does the patient have a parent, guardian, or legal representative?'}
+            </ResponsiveText>
+          <View style={styles.radioview}>
+
+            <TouchableOpacity onPress={()=>setguardianaddress('Yes')} style={styles.radiotext}>
+          <Icons icon={guardianaddress=='Yes'?Images.Radiocheck:Images.radiouncheck}
+          
+style={{width:wp(4),height:wp(4)}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'Yes'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+<TouchableOpacity  onPress={()=>setguardianaddress('No')} style={{...styles.radiotext ,marginLeft:10}}>
+<Icons icon={guardianaddress=='No'?Images.Radiocheck:Images.radiouncheck}
+
+          
+style={{width:wp(4),height:wp(4)}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'No'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+
+        </View>
+          </View>
+
+          <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'First Name'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+
+        <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Middle Name'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+
+        <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Last Name'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+
+
+        <View style={styles.rowview}>
+
+
+
+<Dropdown
+data={relation}
+fontSize={16}
+borderColor={Colors.borderColor}
+width={wp(41)}
+defaultButtonText={'Relationship'}
+textcolor={Colors.grayText}
+onSelect={(selectedItem, index) => {
+console.log(selectedItem, index)
+}}
+/>
+<InputField
+placeholder={'Phone'}
+// value={''}
+
+onChangeText={(text)=>console.log(text)}
+placeholderTextColor={Colors.txtgray}
+textinputstyle={styles.textinputstyle}
+width={wp(37)}
+
+/>
+
+
+</View>
     
+
+<View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Email'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+
+        <View style={styles.headingview}>
+        <ResponsiveText style={{...styles.txt}}>
+              {'Emergency Contact Information'}
+            </ResponsiveText>
+
+        </View>
+
+        <View style={styles.textradio}>
+         
+          <View style={styles.radioview}>
+
+            <TouchableOpacity onPress={()=>setemergencycontact('Self')} style={styles.radiotext}>
+          <Icons icon={emergencycontact=='Self'?Images.Radiocheck:Images.radiouncheck}
+          
+style={{width:wp(4),height:wp(4)}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'Self'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+<TouchableOpacity onPress={()=>setemergencycontact('Parent/Guardian')} style={styles.radiotext}>
+          <Icons icon={emergencycontact=='Parent/Guardian'?Images.Radiocheck:Images.radiouncheck}
+          
+style={{width:wp(4),height:wp(4),marginLeft:15}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'Parent/Guardian'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+
+<TouchableOpacity onPress={()=>setemergencycontact('other')} style={styles.radiotext}>
+          <Icons icon={emergencycontact=='other'?Images.Radiocheck:Images.radiouncheck}
+          
+style={{width:wp(4),height:wp(4),marginLeft:15}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'Other'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+        </View>
+          </View>
+
+          <View style={styles.textradio}>
+          <ResponsiveText style={{...styles.textheading1,width:wp(60)}}>
+              {'Permission to speak?'}
+            </ResponsiveText>
+          <View style={styles.radioview}>
+
+            <TouchableOpacity onPress={()=>setPermission('Yes')} style={styles.radiotext}>
+          <Icons icon={Permission=='Yes'?Images.Radiocheck:Images.radiouncheck}
+          
+style={{width:wp(4),height:wp(4)}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'Yes'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+<TouchableOpacity  onPress={()=>setPermission('No')} style={{...styles.radiotext ,marginLeft:10}}>
+<Icons icon={Permission=='No'?Images.Radiocheck:Images.radiouncheck}
+
+          
+style={{width:wp(4),height:wp(4)}}/>
+
+<ResponsiveText style={{...styles.yesno}}>
+              {'No'}
+            </ResponsiveText>
+</TouchableOpacity>
+
+
+        </View>
+          </View>
+          <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Name'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+        <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Realtionship to the Contact'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+
+      
+        <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Phone'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+        <View style={{...styles.inputview}}>
+        <InputField
+        placeholder={'Email'}
+        // value={''}
+  fontSize={16}
+
+        onChangeText={(text)=>console.log(text)}
+        placeholderTextColor={Colors.txtgray}
+        textinputstyle={styles.textinputstyle}
+        
+        />
+        </View>
+
         <View style={styles.btnview}>
             <Button
-            title={'Create Booking'}
+            title={'Save'}
             onPress={()=>props.navigation.goBack()}/>
         </View>
         </ScrollView>
@@ -238,7 +537,7 @@ const styles = StyleSheet.create({
         },
         dropdown:{
             borderWidth:0,marginTop:hp(1.5),marginHorizontal:wp(5),borderRadius:10  },
-            btnview:{marginTop:hp(10),borderWidth:0,alignItems:'center',marginHorizontal:wp(5),justifyContent:'center'},
+            btnview:{marginTop:hp(4),borderWidth:0,alignItems:'center',marginHorizontal:wp(4,m),justifyContent:'center'},
             imageview:{
                 borderWidth:0,
                 marginHorizontal:wp(5),
@@ -246,15 +545,21 @@ const styles = StyleSheet.create({
                 alignItems:'center',
                 justifyContent:"center"
             },
+            headingview:{
+                borderWidth:0,
+            marginHorizontal:wp(5),
+            marginTop:hp(3)
+            },
             img:{
                 borderWidth:2,
                 width:wp(40),
                 height:wp(40),
-                borderRadius:wp(20),
+                borderRadius:wp(40),
                 borderColor:Colors.primary,
                 alignItems:"center",
                 justifyContent:"center",
-                alignSelf:'center'
+                alignSelf:'center',
+                
             },
             rowimage:{
                 borderWidth:0,flexDirection:'row',
@@ -264,6 +569,15 @@ const styles = StyleSheet.create({
                 bottom:hp(-1.5),
                
             },
+            yesno:{
+                fontSize:14,fontWeight:'400',color:Colors.balckText,marginLeft:5
+              },
+              txt:{
+                fontSize:18,fontWeight:'600',color:Colors.balckText
+              },
+              radiotext:{
+                flexDirection:'row',alignItems:"center",justifyContent:'space-between',borderWidth:0
+              },
             iconsimage:{
                 width:wp(8),
                 height:wp(8)
@@ -273,9 +587,21 @@ const styles = StyleSheet.create({
                 marginTop:hp(3),
                 marginHorizontal:wp(5)
             },
+            textradio:{
+                borderWidth:0,alignItems:'center',flexDirection:"row",
+            
+                marginHorizontal:wp(5),marginTop:hp(2.5),justifyContent:'space-between',
+              },
             headingtxt:{
                 fontSize:18,
                 fontWeight:'600',
                 color:Colors.balckText
-            }
+            },
+            radioview:{borderWidth:0,
+                flexDirection:'row',
+                justifyContent:'space-between',
+                alignContent:'center'  },
+                textheading1:{
+                    fontSize:14,fontWeight:'400',color:Colors.balckText,width:wp(68),borderWidth:0
+                  },
 })

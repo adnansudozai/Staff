@@ -201,7 +201,7 @@ const renderItem = ({ item }) => {
      name={'Elaine Hale'}
     //  onPress={()=>props.navigation.openDrawer()}
      />
-
+{/* 
 <View style={styles.butonview}>
 <View style={{borderWidth:0,flexDirection:'row',alignSelf:'flex-end'}}>
             <TouchableOpacity
@@ -242,7 +242,7 @@ const renderItem = ({ item }) => {
             </TouchableOpacity>
             
             </View>
-     </View>
+     </View> */}
      <ScrollView>
      <View style={styles.inbox}>
       <ResponsiveText style={styles.inboxtxt}>

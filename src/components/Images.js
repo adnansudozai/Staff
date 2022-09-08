@@ -9,6 +9,7 @@ const Images = {
   Patient: require('../assets/Icons/BottomTab/Patient.png'),
   Schedule: require('../assets/Icons/BottomTab/Schedule.png'),
   experience: require('../assets/Icons/BottomTab/experience.png'),
+  visit: require('../assets/Icons/BottomTab/visit.png'),
   inbox: require('../assets/Icons/BottomTab/inbox.png'),
   profile: require('../assets/Icons/BottomTab/profile.png'),
 

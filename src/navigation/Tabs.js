@@ -6,7 +6,9 @@ import Inbox from '../screens/Inbox/Inbox';
 import Profile from '../screens/Profile/Profile';
 import Patient from '../screens/Patient/Patient';
 import Experience from '../screens/Experience/Experience';
+import Createvisit from '../screens/CreateVisit/CreateVisit';
 import {Images,Colors} from '../components/index';
+import Createpatient from '../screens/Createpatient/Createpatient';
 import {
     heightPercentageToDP as hp,
     widthPercentageToDP as wp,
@@ -131,8 +133,8 @@ options={{
         
       
     }} />
-    <Tab.Screen name='Patient' 
-   component={Patient} options={{
+    <Tab.Screen name='Createpatient' 
+   component={Createpatient} options={{
         headerShown: false,
         tabBarLabel: '',
         tabBarIcon: ({ focused }) => (
@@ -153,7 +155,7 @@ options={{
     }} />
 
     
-    <Tab.Screen name='Experience' component={Experience} options={{
+    <Tab.Screen name='Createvisit' component={Createvisit} options={{
         headerShown: false,
         tabBarLabel: '',
      
@@ -161,14 +163,14 @@ options={{
            
             focused?
             <View style={styles.mainview}>
-                <Image source={Images.experience} style={styles.icons1}  />
-                <Text style={{...styles.labeltext,color:Colors.textColorWhite,}}>Exp.</Text>
+                <Image source={Images.visit} style={styles.icons1}  />
+                <Text style={{...styles.labeltext,color:Colors.textColorWhite,}}>Visit</Text>
                
                 </View>
                 :
                 <View style={styles.mainview}>
-                <Image source={Images.experience} style={styles.icons}  />
-                <Text style={{...styles.labeltext,color:Colors.inactivetext}}>Exp.</Text>
+                <Image source={Images.visit} style={styles.icons}  />
+                <Text style={{...styles.labeltext,color:Colors.inactivetext}}>Visit</Text>
                
                 </View>
                  )

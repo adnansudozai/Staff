@@ -29,6 +29,7 @@ const [focus,setfocus]=useState(false)
   
      dropdownStyle={{borderWidth:0,borderRadius:10}}
     defaultButtonText={props.defaultButtonText}
+    
     buttonTextStyle={{color:props.textcolor,borderWidth:0,position:'absolute',right:5,fontSize: props.fontSize?props.fontSize:12,}}
     onFocus={()=>setfocus(!focus)}
     onBlur={()=>setfocus(!focus)}
@@ -41,7 +42,7 @@ const [focus,setfocus]=useState(false)
 export default Dropdown
 
 const styles = StyleSheet.create({
-    dropdownStyle:{borderWidth:1,width:wp(63),borderRadius:10
+    dropdownStyle:{borderWidth:1,width:wp(63),borderRadius:10,
     
 }
 })
