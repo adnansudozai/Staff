@@ -568,9 +568,17 @@ const Schedule = (props) => {
             {'Schedule'}
           </ResponsiveText>
           <View style={styles.rowview}>
-            <TouchableOpacity onPress={()=>props.navigation.navigate('Weekdays')} style={{ ...styles.download, borderWidth: 0 }}>
+            <TouchableOpacity style={{ ...styles.download, borderWidth: 0 }}>
               <Icons icon={Images.download}
                 style={{ width: wp(10.5), height: wp(10.5) }} />
+
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=>props.navigation.navigate('Weekdays')} style={{ ...styles.download, borderWidth: 1 }}>
+            <ResponsiveText style={styles.filter}>
+                {'Week'}
+              </ResponsiveText>
+
 
             </TouchableOpacity>
             <TouchableOpacity onPress={() => setalertModal(true)}

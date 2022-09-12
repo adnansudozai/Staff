@@ -60,6 +60,66 @@ const Weekdays = (props) => {
           
   
           },
+          {
+            time:'15:02',
+          
+  
+          },
+          {
+            time:'09:52',
+          
+  
+          },
+          {
+            time:'10:52',
+          
+  
+          },
+          {
+            time:'15:52',
+          
+  
+          },
+          {
+            time:'15:52',
+          
+  
+          },
+          {
+            time:'15:52',
+          
+  
+          },
+          {
+            time:'15:52',
+          
+  
+          },
+          {
+            time:'10:52',
+          
+  
+          },
+          {
+            time:'15:52',
+          
+  
+          },
+          {
+            time:'15:52',
+          
+  
+          },
+          {
+            time:'15:52',
+          
+  
+          },
+          {
+            time:'15:52',
+          
+  
+          },
 
        
        
@@ -68,7 +128,7 @@ const Weekdays = (props) => {
         return(
 
 
-<TouchableOpacity onPress={()=>props.navigation.navigate('DraftNotedetail')} style={{...styles.headinsg1,backgroundColor:'#C2D6F1'}}> 
+<TouchableOpacity style={{...styles.headinsg1,backgroundColor:'#C2D6F1'}}> 
 
 <View style={{...styles.datevie,backgroundColor:'white'}}>
 <ResponsiveText style={styles.headingtxt1}>
@@ -136,6 +196,7 @@ const Weekdays = (props) => {
     <Simpleheader
     title={'Weak Days View'}
     navigation={props.navigation}/>
+    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:wp(10)}}>
 <View>
     <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
 <View style={{marginHorizontal:wp(5),marginTop:hp(6),flexDirection:'row',borderWidth:0}}>
@@ -405,6 +466,7 @@ const Weekdays = (props) => {
           </View>
         </View>
       </Modal>
+      </ScrollView>
         </Container>
   )
 }
