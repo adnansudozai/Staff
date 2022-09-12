@@ -75,13 +75,7 @@ const Inbox = (props) => {
       ctype:'Notes',
       cicon:Images.notes,
       cdata:[
-        {
-          type:'Create Notes',
-          icon:Images.create_message,
-          totalmessage:4,
-          navigation:'Createnotes',
-          id:1,
-        },
+        
         {
           type:'Pending Notes',
           icon:Images.pending_notes,
@@ -243,7 +237,7 @@ const renderItem = ({ item }) => {
             
             </View>
      </View> */}
-     <ScrollView>
+     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:hp(20)}}>
      <View style={styles.inbox}>
       <ResponsiveText style={styles.inboxtxt}>
         {'Inbox'}

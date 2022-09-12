@@ -16,6 +16,6 @@ const Icons = (props) => {
 export default Icons
 
 const styles = StyleSheet.create({
-    icons:{width:wp(8),height:wp(8)},
+    icons:{width:wp(8),height:wp(8)},alignSelf: 'center',
 
 })

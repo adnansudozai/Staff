@@ -537,7 +537,7 @@ const styles = StyleSheet.create({
         },
         dropdown:{
             borderWidth:0,marginTop:hp(1.5),marginHorizontal:wp(5),borderRadius:10  },
-            btnview:{marginTop:hp(4),borderWidth:0,alignItems:'center',marginHorizontal:wp(4,m),justifyContent:'center'},
+            btnview:{marginTop:hp(4),borderWidth:0,alignItems:'center',marginHorizontal:wp(4),justifyContent:'center'},
             imageview:{
                 borderWidth:0,
                 marginHorizontal:wp(5),

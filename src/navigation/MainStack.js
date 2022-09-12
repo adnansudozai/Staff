@@ -20,6 +20,7 @@ import DraftNotedetail from '../screens/DraftNotesdetail/DraftNotesdetail';
 import Createnotes from '../screens/CreateNotes/CreateNotes';
 import Createvisit from '../screens/CreateVisit/CreateVisit';
 import Createpatient from '../screens/Createpatient/Createpatient';
+import Weekdays from '../screens/Weekdays/Weekdays';
 const Stack = createNativeStackNavigator();
 
 const MainStack = ({navigation, style}) => {
@@ -47,6 +48,7 @@ const MainStack = ({navigation, style}) => {
       <Stack.Screen name="Detailnotes" component={Detailnotes} />
       <Stack.Screen name="Createnotes" component={Createnotes} />
       <Stack.Screen name="DraftNotedetail" component={DraftNotedetail} />
+      <Stack.Screen name="Weekdays" component={Weekdays} />
     </Stack.Navigator>
     // </Animated.View>
 

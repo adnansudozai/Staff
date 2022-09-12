@@ -568,7 +568,7 @@ const Schedule = (props) => {
             {'Schedule'}
           </ResponsiveText>
           <View style={styles.rowview}>
-            <TouchableOpacity style={{ ...styles.download, borderWidth: 0 }}>
+            <TouchableOpacity onPress={()=>props.navigation.navigate('Weekdays')} style={{ ...styles.download, borderWidth: 0 }}>
               <Icons icon={Images.download}
                 style={{ width: wp(10.5), height: wp(10.5) }} />
 
