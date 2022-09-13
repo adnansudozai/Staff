@@ -11,9 +11,7 @@ import CalendarPicker from 'react-native-calendar-picker';
 const Weekdays = (props) => {
     const [alertModal, setalertModal] = useState(false)
     const countries = ["Egypt", "Canada", "Australia", "Ireland"]
-    const Status = ["Conferm", "Pending"]
-    const apiveri = ["Yes", "No"]
-
+  
     let data=[
         {
           time:'15:52',
@@ -101,26 +99,11 @@ const Weekdays = (props) => {
   
           },
           {
-            time:'15:52',
+            time:'10:52',
           
   
           },
-          {
-            time:'15:52',
-          
   
-          },
-          {
-            time:'15:52',
-          
-  
-          },
-          {
-            time:'15:52',
-          
-  
-          },
-
        
        
       ]
@@ -128,9 +111,9 @@ const Weekdays = (props) => {
         return(
 
 
-<TouchableOpacity style={{...styles.headinsg1,backgroundColor:'#C2D6F1'}}> 
+<View style={{...styles.headinsg1,backgroundColor:'#C2D6F1'}}> 
 
-<View style={{...styles.datevie,backgroundColor:'white'}}>
+<View style={{...styles.datevie,backgroundColor:'white',width:wp(16)}}>
 <ResponsiveText style={styles.headingtxt1}>
       {item.time}
     </ResponsiveText>
@@ -152,13 +135,9 @@ const Weekdays = (props) => {
     </ResponsiveText>
 </View>
 
-<View style={{...styles.datevie,}}>
-<ResponsiveText style={styles.headingtxt1}>
-      {''}
-    </ResponsiveText>
-</View>
+
            
-</TouchableOpacity>
+</View>
         )
       }
 
@@ -167,7 +146,7 @@ const Weekdays = (props) => {
           <View style={styles.headinsg}> 
         
          
-          <View style={{...styles.datevie,borderWidth:0}}>
+          <View style={{...styles.datevie,borderWidth:0,width:wp(16)}}>
           <ResponsiveText style={styles.headingtxt}>
                 {'Time'}
               </ResponsiveText>
@@ -194,18 +173,18 @@ const Weekdays = (props) => {
   return (
     <Container backgroundColor={Colors.statusbarcolor}>
     <Simpleheader
-    title={'Weak Days View'}
+    title={'Weak View'}
     navigation={props.navigation}/>
     <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:wp(10)}}>
 <View>
-    <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-<View style={{marginHorizontal:wp(5),marginTop:hp(6),flexDirection:'row',borderWidth:0}}>
+    {/* <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}> */}
+<View style={{marginHorizontal:wp(2),marginTop:hp(6),flexDirection:'row',borderWidth:0}}>
 
 
 <TouchableOpacity onPress={() => setalertModal(true)}
               style={{ ...styles.download,alignItems: 'center' }}>
               <Icons icon={Images.filter}
-                style={{ width: wp(5), height: wp(5), }} />
+                style={{ width: wp(5), height: wp(6), }} />
              
 
 
@@ -214,7 +193,7 @@ const Weekdays = (props) => {
 
 
             <TouchableOpacity
-              style={{ ...styles.download,alignItems: 'center' , width:wp(20),marginLeft:8}}>
+              style={{ ...styles.download,alignItems: 'center' , width:wp(20)}}>
                 <ResponsiveText style={styles.filter}>
                 {'Today'}
               </ResponsiveText>
@@ -222,7 +201,7 @@ const Weekdays = (props) => {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={{ ...styles.download,alignItems: 'center' , width:wp(25),marginLeft:8}}>
+              style={{ ...styles.download,alignItems: 'center' , width:wp(20)}}>
                 <ResponsiveText style={styles.filter}>
                 {'1 Week'}
               </ResponsiveText>
@@ -230,21 +209,15 @@ const Weekdays = (props) => {
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={{ ...styles.download,alignItems: 'center' , width:wp(25),marginLeft:8}}>
+              style={{ ...styles.download,alignItems: 'center' , width:wp(20)}}>
                 <ResponsiveText style={styles.filter}>
                 {'2 Week'}
               </ResponsiveText>
 
             </TouchableOpacity>
+         
             <TouchableOpacity
-              style={{ ...styles.download,alignItems: 'center' , width:wp(25),marginLeft:8}}>
-                <ResponsiveText style={styles.filter}>
-                {'3 Week'}
-              </ResponsiveText>
-
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{ ...styles.download,alignItems: 'center' , width:wp(25),marginLeft:8}}>
+              style={{ ...styles.download,alignItems: 'center' , width:wp(20)}}>
                 <ResponsiveText style={styles.filter}>
                 {'4 Week'}
               </ResponsiveText>
@@ -253,7 +226,7 @@ const Weekdays = (props) => {
 
 </View>
 
-        </ScrollView>
+        {/* </ScrollView> */}
         </View>
         <View style={styles.graybackground}>
             <View style={styles.rowview}>
@@ -565,11 +538,13 @@ const styles = StyleSheet.create({
       },
       download: {
         borderWidth: 1,
-        padding: 10,
-        marginLeft: 10,
-    
+        paddingHorizontal: 6,
+        paddingVertical:6,
+        marginLeft: 4,
         borderRadius: 8,
-        borderColor: Colors.borderColor
+        borderColor: Colors.borderColor,
+        alignItems:'center',
+        justifyContent:"center"
     
       },
       datevie1:{
@@ -602,7 +577,7 @@ const styles = StyleSheet.create({
       datevie:{
         borderWidth:0.5,
         paddingVertical:3,
-        width:wp(16),
+        width:wp(24),
         alignItems:'center',
         borderColor:Colors.borderColor
       },
